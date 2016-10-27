@@ -1,0 +1,174 @@
+Version 1.1
+Software Engineering Project
+Requirements Analysis and Specifications Document
+
+Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
+
+
+
+Revision Notice
+
+Table 1 : RASD versions
+
+
+Table of Contents
+
+Revision Notice	1
+List of tables	4
+List of figures	4
+1.	Introduction	5
+1.1.	Purpose	5
+1.2.	Scope	5
+1.3.	Glossary	5
+1.4.	Reference Documents	5
+1.5.	Used Tools	5
+1.6.	Overview	5
+2.	Stakeholders specification	6
+2.1.	Stakeholders	6
+2.2.	Goals and Objectives	6
+2.3.	Scenarios identifying	6
+2.3.1.	First Scenario	6
+2.3.2.	Second Scenario	6
+2.3.3.	Third Scenario	6
+3.	Overall Description	7
+3.1.	Product perspective (external interfaces)	7
+3.2.	Product functions (Goals)	7
+3.3.	User characteristics (actors)	7
+3.4.	Constraints	7
+3.5.	Assumptions and Dependencies (Domain)	7
+4.	Specific Requirements	8
+4.1.	External Interface Requirements	8
+4.1.1.	User Interfaces	8
+4.1.2.	Hardware Interfaces	8
+4.1.3.	Software Interfaces	8
+4.1.4.	Communication Interfaces	8
+4.2.	Functional requirements	8
+4.2.1.	Use cases diagram	8
+4.2.2.	Use case 1	8
+4.2.3.	Use case 2	8
+4.3.	Non-functional requirements	8
+4.3.1.	Architectural consideration	8
+4.4.	Design Constraints	8
+4.4.1.	Standards compliance	8
+4.4.2.	Hardware limitations	8
+4.5.	Software System Attributes	8
+4.5.1.	Reliability	8
+4.5.2.	Availability	8
+4.5.3.	Security	8
+4.5.4.	Maintainability	8
+4.5.5.	Portability	8
+4.6. Other Requirements	9
+5.	UML models	10
+5.1.	Class diagram	10
+5.2.	Sequence diagrams	10
+5.3.	Activity diagrams	10
+5.4.	State diagrams	10
+6.	Alloy modelling	11
+6.1.	Model	11
+6.2.	Alloy result	11
+6.3.	World generated	11
+7.	Future development	12
+8.	Hours of work	13
+A.	Vianney Payelle	13
+B.	Rémi Rigal	13
+C.	Noëlie Ramuzat	13
+Appendices	14
+Index	15
+
+
+List of tables 
+
+Table 1 : RASD versions	1
+Table 2 : Reference Documents used in the RASD	6
+Table 3 : Description of the tools used to create the RASD	6
+
+List of figures
+
+1.	Introduction
+1.1.	Purpose
+1.2.	Scope
+1.3.	Glossary
+1.4.	Reference Documents
+
+Table 2 : Reference Documents used in the RASD
+1.5.	Used Tools
+
+Table 3 : Description of the tools used to create the RASD
+
+
+
+1.6.	Overview
+
+
+2.	Stakeholders specification
+2.1.	Stakeholders
+2.2.	Goals and Objectives
+2.3.	Scenarios identifying
+2.3.1.	First Scenario
+2.3.2.	Second Scenario
+2.3.3.	Third Scenario
+
+
+3.	Overall Description 
+
+3.1.	Product perspective (external interfaces)
+3.2.	Product functions 
+3.3.	User characteristics (actors)
+3.4.	Constraints
+3.5.	Assumptions and Dependencies (Domain)
+
+
+4.	Specific Requirements
+4.1.	External Interface Requirements
+4.1.1.	User Interfaces
+4.1.2.	Hardware Interfaces
+4.1.3.	Software Interfaces
+4.1.4.	Communication Interfaces
+
+4.2.	Functional requirements
+4.2.1.	Use cases diagram
+4.2.2.	Use case 1
+4.2.2.1.	Functional requirement 1.1
+4.2.3.	Use case 2
+4.2.3.1.	Functional requirement 2.1
+
+4.3.	Non-functional requirements
+4.3.1.	Architectural consideration
+
+4.4.	Design Constraints
+4.4.1.	Standards compliance 
+4.4.2.	Hardware limitations
+
+4.5.	Software System Attributes
+4.5.1.	Reliability 
+4.5.2.	Availability 
+4.5.3.	Security 
+4.5.4.	Maintainability 
+4.5.5.	Portability
+
+4.6. Other Requirements
+
+5.	UML models
+
+5.1.	Class diagram 
+5.2.	Sequence diagrams
+5.3.	Activity diagrams
+5.4.	State diagrams
+
+6.	Alloy modelling
+
+6.1.	Model
+6.2.	Alloy result
+6.3.	World generated
+
+7.	Future development
+
+8.	Hours of work
+8.1.	Vianney Payelle
+8.2.	Rémi Rigal
+8.3.	Noëlie Ramuzat
+
+Appendices
+
+Index
+
