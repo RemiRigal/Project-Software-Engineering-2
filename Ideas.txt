@@ -16,7 +16,7 @@ Assumptions
 	-we can trust provided informations (early driver license)
 	-he has a smartphone with localisation system
 	-the driver is legally responsible for the car and his actions
-	-
+	
 
 	Car
 
