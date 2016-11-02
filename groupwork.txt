@@ -1,0 +1,40 @@
+Assumptions
+
+	System
+
+	-we can check the position cars at anytime, anywhere
+	-you can only access by smartphone applications
+	-we knows the set of GPS coordinate of each special zone
+	-one model, one price
+	-the society have a maintenance service for cars
+
+	-someone who rent the car and unlock it will use it (ignite engine)
+
+	Driver
+
+	-he has a driver license, piece of identity and way of payment
+	-we can trust provided informations (early driver license)
+	-he has a smartphone with localisation system
+	-the driver is legally responsible for the car and his actions
+	-
+
+	Car
+
+	-the car can count the number of present passenger
+	-we can communicate with the car at anytime, anywhere
+	-there is an interface to communicate with the user: 
+
+System requirement
+
+	You cannot access to the application until you are logged in
+	You cannot book a car if your payment informations are not up to date
+	You have access to:saving money option, payment 	informations, navigation system with 		zones from the car interface
+	Available car state: battery > 20%
+
+	You can know the remaining autonomy of the available car while booking them
+
+	To get the recharge discount, you need to plug it within 5 min after left the car
+
+	To unlock the car, the user signal his position through the application and we check if he is 	close enough
+
+
