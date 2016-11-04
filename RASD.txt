@@ -34,63 +34,72 @@ Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
 3.2.1.	Scenarios identifying [Noëlie]
 3.2.1.1. Scenarios Diagram [Rémi]
 3.2.1.2.	First Scenario
-	-	John downloads the PowerEnjoy app on his mobile.
-	-   He registers the app by giving his name, his email, his payment information, his driver license and a copy of his identity card. 
-	- 	He receives his password on his email.
+	-	John wants to visits the Duomo with Claire and Marie. He has heard about the PowerEnjoy app by a friend, so he wants to try and downloads it on his mobile.
+	-   He registers on the app, giving his name, his email, his payment information, his driver license and a copy of his identity card. 
+	- 	He receives a confirmation of his registration and his user password by email.
 	-	He logs in the app, selects the reservation mode and chooses 1.5km as maximal distance from his position where he wants to find a car. 
-	-	PowerEnjoy provides him a map with the station around him, according to the distance, with the indication of the available cars.
-	-	He selects a car in the nearest station. 
-	-	He validates at 2pm, the app registers the reservation and locks the car for John until 3pm. He receives an email of confirmation.
-	-	At 2.30pm John stops near the car and selects the unlock mode of the app. The car is unlocked (detects John with GPS). He gets in the car and sees on the screen the price of the ride: 0€, and the amount of money/min: 0.8€.
-	-	Then he ticks the money saving option and put his destination, the Duomo. On the car interface, the app indicates him the nearest station from his destination where he can have a discount.
+	-	PowerEnjoy provides him a map with the stations around him, according to the distance, with the indication of the available cars.
+	-	He selects a car in the nearest station, at 500m from him. 
+	-	He validates at 2pm. He receives an email, confirming that the car is locked for John until 3pm.
+	-	At 2.05pm John walks to the car and selects the unlock mode of the app, then the car unlockes. 
+	-	He gets in the car and sees on the navigation screen the price of the ride: 0€, the actual discount: 0€ and the amount of money/min: 0.8€.
+	-	Then he ticks the money saving option and put his destination. On the car interface, the app indicates him the nearest station from the Duomo where he can have a discount.
 	-	He drives and takes Claire and Marie on the road, the system detects them and the screen prints a discount of 10%.
-	-	Reaching the station after 20 minutes, John parks the car and plugs it. The battery is 40% empty. The discount is 60% (10%+30%+20%) on the screen. 
-	-	John, Clare and Marie leave the car, the system detects that the car is empty & close & park in a safe area with the GPS. It stops charging the price, locks car & registers it as available at the new station on the app.
-	-	John receives an email with the amount of money he will pay, 16€ and the discount he has on his last ride : 60%.
+	-	Reaching the station after 20 minutes, John parks the car and plugs it. The battery is 40% empty. The price is 16€ and the discount 60% on the screen. 
+	-	John, Claire and Marie leave the car, the car locks and is available again.
+	-	John receives an email with the amount of money he will pay, 7€ and the discount he has : 60%.
 
 3.2.1.3.	Second Scenario
 	-	Katia is already registered on the PowerEnjoy app. She uses the reservation mode to find a car near her flat to go to the cinema; she enters her address on the app. 
 	-	She enters 700m as the maximal distance from her flat where she wants to find a car. 
-	-	PowerEnjoy provides her a map with the station around her according to the distance, with the indication of the available cars.
-	-	She selects a car in the tram station and she validates at 4pm. 
-	-	The app registers the reservation and locks the car for Katia until 5pm. She receives an email of confirmation.
-	-	But finally Katia invites Karl to the cinema and he drives them. So Katia was not at the station after 6p.m. The system registers the car as available again at the station.
+	-	PowerEnjoy provides her a map with the stations around her according to the distance, with the indication of the available cars.
+	-	She selects a car in the tram station and she validates at 4p.m. 
+	-	She receives an email, confirming that the car is locked for her until 5pm.
+	-	But finally Katia invites Karl to the cinema and he drives them. So Katia was not at the station after 6p.m. At this moment the car is available again at the station.
 	-	Katia receives an email with the amount of money she has to pay: 1€, the app informs her that she cannot select a car again in the next 3h.
 
 3.2.1.4.	Third Scenario
-	-	Steve is already registered on the PowerEnjoy app. He selects the reservation mode of the app, and enters 1km as the maximal distance from his position he wants to find a car. 
+	-	Steve selects the reservation mode of the app and enters 1km as maximal distance to find a car. 
 	-	The app provides him a map with the station around him according to the distance, with the indication of the available cars.
 	-	He selects a car with 50% of battery empty in the 3rd station and and validates at 5p.m. 
-	-	PowerEnjoy registers the reservation and locks the car for Steve until 6pm. He receives an email of confirmation.
-	-	At 5.40pm, Steve walks to the station, stops near the car and selects the unlock mode of the app. The car is unlocked. He gets in the car and sees on the screen the price of the ride: 0€, and the amount of money/min: 0.7€.
+	-	He receives an email, confirming that the car is locked for him until 6pm.
+	-	At 5.40pm, Steve walks to the station, stops near the car and selects the unlock mode of the app. The car is unlocked. 
+	-	He gets in the car and sees on the screen the price of the ride: 0€, the actual discount: 0€ and the amount of money/min: 0.7€.
 	-	He drives 1h until reach his grandparent’s small town. There is only one safe station given by the app, without power grid, the nearest is at 4km from the station. 
-	- 	He parks there, the battery is 81% empty. The screen prints a charge of 60% (30%+30%). 
-	-	He leaves the car, the system detects that the car is empty & close & park in a safe area with the GPS. It stops charging the price, locks the car & registers it as available at the new station.
-	-	Steve receives a message with the amount of money he will pay: 42€ and the charge he has on his last ride : 60%.
+	- 	He parks there, the battery is 81% empty. The screen prints a charge of 60%.
+	-	He leaves the car, which locks and is available again.
+	-	Steve receives a message with the amount of money he will pay: 67€ and the charge he has on his last ride : 60%.
 	
 3.2.1.5.	Fourth Scenario
-	- 	Amelie is already registered on the PowerEnjoy app. She selects the reservation mode of the app, and enters 2km as the maximal distance from her position she wants to find a car. 
+	- 	Amelie selects the reservation mode of the app, and enters 2km as the maximal distance from her she wants to find a car. 
 	-	The app provides her a map with the station around her, according to the distance, with the indication of the available cars.
 	-	She selects a car in the nearest parking and validates at 7p.m. 
-	-	The app registers the reservation and locks the car for Amelie until 8pm. She receives an email of confirmation.
+	-	She receives an email, confirming that the car is locked for her until 8p.m.
 	-	But her mother decides at the last moment to come at her house. 
-	- 	So Amelie cancels her booking on the app before 7.30p.m.
-	- 	She received an email confirming it, she pays 1€ & the app informs her that she cannot select a car again in the next 2h.
+	- 	So Amelie cancels her booking on the app at 7.30p.m.
+	- 	She received an email confirming it, she pays 1€ and the app informs her that she cannot select a car again in the next 2h.
 	- 	The car is available again immediately on the app.
 	
 3.2.1.5.	Fifth Scenario
 	- 	Anna is already registered on the PowerEnjoy app. She selects the reservation mode of the app, and enters 1km as the maximal distance from her position she wants to find a car. 
 	-	The app provides her a map with the station around her, according to the distance, with the indication of the available cars.
 	-	She selects a car in the nearest parking and validates at 6a.m. 
-	-	The app registers the reservation and locks the car for Anna until 7a.m. She receives an email of confirmation.
+	-	She receives an email, confirming that the car is locked for her until 7a.m. 
 	-	Then her sister wants to take a car too, she is used to take the account of Anna on PowerEnjoy. She tried to use the reservation mode on her phone but she can't select it.
 	- 	She can only access to the cancel mode.  
 	- 	She asks to Anna if she reserved a car, and if she can drives her to the school. Anna agrees and they live their house.
 
+3.2.1.6. Sixth Scenario
+	-	Simone has reserved a car with the PowerEnjoy app. He has picked it in time and drived until his girlfriend's house. The price on the screen is 22€. 
+	-	There is no safe area around the house and Simone decides to parks in the street.
+	- 	He leaves the car, which locks and is available again.
+	-	Simone receives a message with the amount of money he will pay: 44€.
+
 3.2.2.	Use cases diagram [Rémi]
 [Noëlie]
-3.2.3.	Use case 1
-	Use case name: AppRegistration
+3.2.3.	Use cases
+Use case 1
+Use case name: AppRegistration
 	Participating actors:
 	-	Driver
 	Entry condition: 
@@ -98,8 +107,8 @@ Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
 	Flow of Events: 
 	-	The Driver fills in the registration form : The Driver gives his name, his email, his payment information, his driver license and an identity document.
 	- 	The Driver submits his informations.
-	- 	PowerEnjoy checks if the email is not in the database. Then it creates a new Driver in the database, with the informations given and a new password.
-	-	PowerEnjoy send a registration confirmation to the Driver, with his password, by email.
+	- 	The System checks if the email is not in the database. Then it creates a new Driver in the database, with the informations given and a new password.
+	-	The System sends a registration confirmation to the Driver, with his password, by email.
 	Exit condition: 
 	-	The Driver received his password by email.
 	Exceptions:
@@ -107,10 +116,9 @@ Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
 	-	If the email is already in the database, the app page is reloaded with an error message 
 	Special Requirements: ?
 	 
-	 
-3.2.3.1.	Functional requirement 1.1
+Functional requirement 1.1
 
-3.2.4.	Use case 2
+Use case 2
 Use cases name: DriverLogIn
 	Participating actors:
 	-	Driver
@@ -118,7 +126,7 @@ Use cases name: DriverLogIn
 	-	The Driver selects the "Login" function of the app
 	Flow of Events: 
 	-	The Driver fills in the email and password entries and submits.
-	-	PowerEnjoy checks the email and password in the database and logs the Driver.
+	-	The System checks the email and password in the database and logs the Driver.
 	Exit condition: 
 	-	The Driver logs in the app.
 	Exceptions:
@@ -126,12 +134,12 @@ Use cases name: DriverLogIn
 	-	If the email is not in the database, the app page is reloaded with an error message.
 	- 	If the password does not correspond to the email in the database, the app page is reloaded with an error message.
 	- 	If the Driver selects the "forget password" function, the Driver has to fill in the email entries and submits. 
-		PowerEnjoy checks the email in the database and sends the associated password by email to the Driver or prints an error.
+		The System checks the email in the database and sends the associated password by email to the Driver or prints an error.
 	Special Requirements: ?
 	 
-	 3.2.4.1.	Functional requirement 2.1
+Functional requirement 2.1
 
-3.2.5.	Use case 3
+Use case 3
 Use cases name: CarReservation
 	Participating actors:
 	-	Driver
@@ -139,10 +147,10 @@ Use cases name: CarReservation
 	Flow of Events: 
 	-	The Driver enters his location, by giving an adress or selecting his GPS position.
 	- 	The Driver chooses a maximal distance from the selected location to find a car. 
-	-	PowerEnjoy finds the station around the location, according to the distance and the available cars. It sends them on a map to the Driver's mobile.
+	-	The System finds the station around the location, according to the distance and the available cars. It sends them on a map to the Driver's mobile.
 	-	The Driver selects a car in a proposed station and validates the reservation.
-	-	PowerEnjoy registers the reservation in the database, by locking the car for the Driver during 1hour : the car is unavailable on the PowerEnjoy app during 1hour.
-	-	PowerEnjoy sends an email of confirmation to the Driver.
+	-	The System registers the reservation in the database, by locking the car for the Driver during 1hour : the car is unavailable on the PowerEnjoy app during 1hour.
+	-	The System sends an email of confirmation to the Driver.
 	Termination condition: 
 	-	The Driver received the reservation confirmation by email.
 	Exceptions:
@@ -150,75 +158,77 @@ Use cases name: CarReservation
 	-	If the Driver had already reserved a car or is forbidden to reserve one,  the "Reserve car" function is not available.
 	Special Requirements: ?	
 	
-	 3.2.5.1.	Functional requirement 3.1
+Functional requirement 3.1
 	 
-3.2.6.	Use case 4
+Use case 4
 Use cases name:  CancelReservation
 	Participating actors:
 	-	Driver
 	Entry condition: The Driver logs in and selects the "Cancel Resevation" function of the app before the end of the reservation.
 	Flow of Events: 
-	-	PowerEnjoy put the car as available in the database and sends an email confirming the cancel & giving the bell of the Driver reservation: 1€. 
-	-	The Driver is notify by PowerEnjoy that it is impossible for him to select a car again in the next 2h.
-	- 	PowerEnjoy registers the Driver as forbidden to reserve a car for the next 2hours in the database.
+	-	The System puts the car as available in the database and sends an email confirming the cancel & giving the bell of the Driver reservation: 1€. 
+	-	The Driver is notified by the System that it is impossible for him to select a car again in the next 2h.
+	- 	The System registers the Driver as forbidden to reserve a car for the next 2hours in the database.
 	Exit condition: 
 	-	The Driver received the cancel confirmation by email and the notification.
 	Exceptions:
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.
 	Special Requirements: ?
 
-	 3.2.6.1.	Functional requirement 4.1
+Functional requirement 4.1
 	 
-3.2.7.	Use case 5:  CarUnloking
-	Participating actors:
+Use case 5
+Use case name:  CarUnloking
+Participating actors:
 	-	Driver
 	Entry condition: The Driver arrives near the car, logs the app and selects the "Unlock car" function 
 	Flow of Events: 
-	-	PowerEnjoy accesses to the location of the Driver by using the GPS of his mobile. 
-	-	PowerEnjoy compares this location with the car's one and unlock it.
+	-	The System accesses to the location of the Driver by using the GPS of his mobile. 
+	-	The System compares this location with the car's one and unlock it.
 	-	The Driver gets in the car and sees on the navigation screen the price of the ride, the amount of money/min and the discount or charge of the ride.
 	Exit condition: 
 	-	The Driver start the car.
 	Exceptions:
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.
-	- 	If the Driver is too far from the car, PowerEnjoy doesn't unlock the car and sends an error message to the Driver.
-	-	If the Driver is not detected at the station one hour after the reservation or is detected after this time, then PowerEnjoy registers the car as available again in the database with its new informations.
-		PowerEnjoy sends an email giving the bell of the Driver reservation: 1€, and notified him that he can't select a car again in the next 3h.
-		PowerEnjoy registers the Driver as forbidden to reserve a car for the next 3hours in the database.
+	- 	If the Driver is too far from the car, The System doesn't unlock the car and sends an error message to the Driver.
+	-	If the Driver is not detected at the station one hour after the reservation or is detected after this time, then the System registers the car as available again in the database with its new informations.
+		The System sends an email giving the bell of the Driver reservation: 1€, and notified him that he can't select a car again in the next 3h.
+		The System registers the Driver as forbidden to reserve a car for the next 3hours in the database.
 	Special Requirements: ?
 
-	 3.2.7.1.	Functional requirement 5.1
+Functional requirement 5.1
 
-3.2.7.	 Use cases name:  RideAndCarLock
+Use case 6
+Use cases name:  RideAndCarLock
 	Participating actors:
 	-	Driver
 	-	Maintenance
 	Entry condition: The Driver start the car.
 	Flow of Events: 
-	-	PowerEnjoy start the charging of the money on the navigation screen.
-	-	The Driver take a ride until the destination.
+	-	The System starts the charging of the money on the navigation screen.
+	-	The Driver takes a ride until the destination.
 	-	The Driver parks in a safe area given by the navigation screen, stops and exits the car.
-	- 	PowerEnjoy is notified that the car is empty and parked in a safe area with the GPS of the car. It stops charging the price, locks the car & registers it as available at the new station in database with its new informations.
-	-	PowerEnjoy sends an email to the Driver with the price of the ride and the discount or charge he will have on his last ride.
+	- 	The System is notified that the car is empty and parked in a safe area with the GPS of the car. It stops charging the price, locks the car and registers it as available at the new station in database with its new informations.
+	-	The System sends an email to the Driver with the price of the ride and the discount or charge he will have on his last ride.
 	Exit condition: 
 	-	The Driver received the bell of the ride.
 	Exceptions:
-	-	If the Driver doesn't park in a safe area, PowerEnjoy sends an email to the Maintenance. Then triple the price of the ride of the Driver.
-	-	If the Driver selects the saving money option on the car's navigation screen and gives his destination, then PowerEnjoy provides him, on the screen, a safe area where he can have a discount.
-	-	If the car detects more than 2 passengers, it informs PowerEnjoy which increases the discount of the last ride by 10% on the navigation screen & in the database.
-	-	If the battery level is > 50%, the car informs PowerEnjoy which increases the discount of the last ride by 20% on the navigation screen & in the database.
-	- 	If the Driver plugs the car on a power grid within 5minutes after leaving the car, PowerEnjoy is notified and increases the discount of the last ride by 30% on the navigation screen & in the database.
-	-	If the battery level is < 80%, the car informs PowerEnjoy which increases the charge of the last ride by 30% on the navigation screen & in the database.
-	-	If the Driver parks further than 3km from the nearest power grid station PowerEnjoy detects it and increases the charge of the last ride by 30% on the navigation screen & in the database.
+	-	If the Driver doesn't park in a safe area, the System stops charging the price, locks the car and sends an email to the Maintenance with the location of the car. Then it removes the discounts on the Driver's ride and doubles its price.
+	-	If the Driver selects the saving money option on the car's navigation screen and gives his destination, then the System provides him, on the screen, a safe area where he can have a discount.
+	-	If the car detects more than 2 passengers, it informs the System which increases the discount of the last ride by 10% on the navigation screen & in the database.
+	-	If the battery level is > 50%, the car informs the System which increases the discount of the last ride by 20% on the navigation screen & in the database.
+	- 	If the Driver plugs the car on a power grid within 5minutes after leaving the car, the System is notified and increases the discount of the last ride by 30% on the navigation screen & in the database.
+	-	If the battery level is < 80%, the car informs the System which increases the charge of the last ride by 30% on the navigation screen & in the database.
+	-	If the Driver parks further than 3km from the nearest power grid station the System detects it and increases the charge of the last ride by 30% on the navigation screen & in the database.
 	Special Requirements:
-	-	PowerEnjoy has to know how cominicate with the Maintenance.
+	-	The System has to know how cominicate with the Maintenance.
 	- 	The price of the ride must be adapted to the amount of money/min. 
 	-	The discount or charge must be adapted to the battery levels/power grid distance/number of passengers.
 
-	 3.2.7.1.	Functional requirement 6.1
+Functional requirement 6.1
 
-3.2.5.	Sequence diagrams
-3.2.6.	Activity diagrams
+3.2.4.	Sequence diagrams
+3.2.5.	Activity diagrams
 
 
 3.3.	Non-functional requirements
