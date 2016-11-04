@@ -7,8 +7,48 @@ Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
 
 1.	Introduction
 1.1.	Purpose (goals)
+Goals:
+
+G1: Allow user to register to the system  by providing credential and payment informations
+
+G2: Allow user to log into the system with provided password
+
+G3: User can locate available cars within a certain distance around him or an address
+
+G4: User can book a car for up to 1hour before pick it up
+
+G5: A booked car but not picked up within one hour generate 1€ fee for the user
+
+G6: A user close enough to a car booked by him must be able to open it
+
+G7: The system start charging once engine ignite
+
+G8: The system stop charging once he leave the car parked in a safe area
+
+G9: The set of safe area is predefined by the management system
+
+G10: Passenger discount
+
+G11: Low consumption discount (<50%)
+
+G12 : Plugged car in special parking area discount
+
+G13: On site recharge fee (<20% battery left or more than 3km from station)
+
+G14: Money saving option: distribution algorithm with user preferences to define a station where the user must leave the car % based on 100% charged battery
+
 1.2.	Scope (world, share phenomena)
 1.3.	Definitions, acronyms, and abbreviations [Vianney]
+User
+Car
+
+Application (Input and output for user)
+Management system (Global management for car and users)
+
+Safe area
+Special parking area
+
+Car status
 1.4.	Reference Documents
 1.5.	Used Tools
 1.6.	Overview
@@ -18,14 +58,41 @@ Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
 2.1.1.	Class diagram 
 2.1.2.	State diagrams
 2.2.	Product functions  (requirements) [Vianney]
+G1: Allow user to register to the system  by providing credential and payment informations
+	-Store provided informations
+	-Link payment credential to payment system
+	-Ensure confidentiality and security
+	-Return password to log into the system
+	-Check already existing user
+
+G2: Allow user to log into the system with provided password
+	-Check credential 
+	-Allow access if the informations are right
+	
+G3: User can locate available cars within a certain distance around him or an address
+	-User can input address and/or range
+	-The management system know if a car is available or not
+	-The management system can compare cars locations with the provided address or the user’s 	locations
+	-The application can show those cars and their locations
+
+
+G4: User can book a car for up to 1 hour before pick it up
+	-User cannot book the car for more than one later than the current time.
+	-User must pick a car among the available ones
+	-The system must change the status of the car from available to unavailable
+
+G5: A booked car but not picked up within one hour generate 1€ fee for the user
+	-The system charge the user who booked the car for 1€
+	-The system change the status of the car from unavailable to available
+
 2.3.	User characteristics (actors) [Vianney]
 2.4.	Constraints [Vianney]
 2.5.	Assumptions and Dependencies (Domain) [Vianney]
-
+- We assume that the amount of safe areas is enough to cover efficiently the entire city in which the system evolves
 
 3.	Specific Requirements
 3.1.	External Interface Requirements
-3.1.1.	User Interfaces
+3.1.1.	User Interfaces [Rémi]
 3.1.2.	Hardware Interfaces
 3.1.3.	Software Interfaces
 3.1.4.	Communication Interfaces
@@ -231,7 +298,7 @@ Functional requirement 6.1
 3.2.5.	Activity diagrams
 
 
-3.3.	Non-functional requirements
+3.3.	Non-functional requirements [Rémi]
 3.3.1.	Architectural consideration [Rémi]
 
 3.4.	Design Constraints
