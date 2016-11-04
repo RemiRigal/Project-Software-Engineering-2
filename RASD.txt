@@ -35,9 +35,8 @@ G12 : Plugged car in special parking area discount
 
 G13: On site recharge fee (<20% battery left or more than 3km from station)
 
-G14: Money saving option: distribution algorithm with user preferences to define a station where the user must leave the car
+G14: Money saving option: distribution algorithm with user preferences to define a station where the user must leave the car % based on 100% charged battery
 
-% based on 100% charged battery
 1.2.	Scope (world, share phenomena)
 1.3.	Definitions, acronyms, and abbreviations [Vianney]
 User
@@ -89,11 +88,11 @@ G5: A booked car but not picked up within one hour generate 1€ fee for the user
 2.3.	User characteristics (actors) [Vianney]
 2.4.	Constraints [Vianney]
 2.5.	Assumptions and Dependencies (Domain) [Vianney]
-
+- We assume that the amount of safe areas is enough to cover efficiently the entire city in which the system evolves
 
 3.	Specific Requirements
 3.1.	External Interface Requirements
-3.1.1.	User Interfaces
+3.1.1.	User Interfaces [Rémi]
 3.1.2.	Hardware Interfaces
 3.1.3.	Software Interfaces
 3.1.4.	Communication Interfaces
@@ -289,7 +288,7 @@ Use cases name:  CancelReservation
 3.2.6.	Activity diagrams
 
 
-3.3.	Non-functional requirements
+3.3.	Non-functional requirements [Rémi]
 3.3.1.	Architectural consideration [Rémi]
 
 3.4.	Design Constraints
