@@ -55,8 +55,8 @@ Car status
 
 2.	Overall Description 
 2.1.	Product perspective (external interfaces)
-2.1.1.	Class diagram 
-2.1.2.	State diagrams
+2.1.1.	Class diagram [Noëlie]
+2.1.2.	State diagrams [Noëlie]
 2.2.	Product functions  (requirements) [Vianney]
 G1: Allow user to register to the system  by providing credential and payment informations
 	-Store provided informations
@@ -294,8 +294,8 @@ Use cases name:  RideAndCarLock
 
 Functional requirement 6.1
 
-3.2.4.	Sequence diagrams
-3.2.5.	Activity diagrams
+3.2.4.	Sequence diagrams [Noëlie]
+3.2.5.	Activity diagrams [Noëlie]
 
 
 3.3.	Non-functional requirements [Rémi]
