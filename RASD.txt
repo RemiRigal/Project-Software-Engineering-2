@@ -280,7 +280,7 @@ Use cases name:  RideAndCarLock
 	Exit condition: 
 	-	The Driver received the bell of the ride.
 	Exceptions:
-	-	If the Driver doesn't park in a safe area, the System stops charging the price, locks the car and sends an email to the Maintenance with the location of the car. Then it removes the discounts on the Driver's ride and doubles its price.
+	-	If the Driver doesn't park in a safe area, the System stops charging the price, locks the car and sends an email to the Maintenance with the location of the car. Then it doubles theprice of the Driver's ride.
 	-	If the Driver selects the saving money option on the car's navigation screen and gives his destination, then the System provides him, on the screen, a safe area where he can have a discount.
 	-	If the car detects more than 2 passengers, it informs the System which increases the discount of the last ride by 10% on the navigation screen & in the database.
 	-	If the battery level is > 50%, the car informs the System which increases the discount of the last ride by 20% on the navigation screen & in the database.
