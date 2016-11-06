@@ -23,9 +23,9 @@ G6: A user close enough to a car booked by him must be able to open it
 
 G7: The system start charging once engine ignite
 
-G8: The system stop charging once he leave the car parked in a safe area
+G8: The set of safe area is predefined by the management system
 
-G9: The set of safe area is predefined by the management system
+G9: The system stop charging once he leave the car parked in a safe area
 
 G10: Passenger discount
 
@@ -84,6 +84,26 @@ G4: User can book a car for up to 1 hour before pick it up
 G5: A booked car but not picked up within one hour generate 1€ fee for the user
 	-The system charge the user who booked the car for 1€
 	-The system change the status of the car from unavailable to available
+
+G6: A user close enough to a car booked by him must be able to open it
+	-The system can detect when a user is close to the car that I booked
+	-A user close to his booked car can open it
+
+G7: The system start charging once engine ignite
+	-The system can detect that the user ignited the engine
+	-The charge is linked to the user through the system, kept in memory, and grow based on rate
+	-The charging rate and the current amount of charge is display with an interface in the car, for the user
+
+G8: The set of safe area is predefined by the management system
+	-The system know the position of safe area and can link them to the position of the vehicle (same positioning system)
+
+G9: The system stop charging once he leave the car parked in a safe area
+	-The system can detect if the vehicle is parked (engine stopped)
+	-The system stop to charge the user if the vehicle is parked in safe area
+	
+G10: Passenger discount
+	
+	
 
 2.3.	User characteristics (actors) [Vianney]
 2.4.	Constraints [Vianney]
