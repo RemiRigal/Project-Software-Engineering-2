@@ -27,15 +27,15 @@ G8: The set of safe area is predefined by the management system
 
 G9: The system stop charging once he leave the car parked in a safe area
 
-G10: Passenger discount
+G10: 10% discount on last ride if the car detect at least two passengers
 
-G11: Low consumption discount (<50%)
+G11: The system apply 20% discount on the last ride if the car is left with more than 50% battery (over full battery)
 
-G12 : Plugged car in special parking area discount
+G12: If the user park the car in a special parking area, where the car can be charged, and take care to plug the car. The system apply 30% discount on the last ride.
 
-G13: On site recharge fee (<20% battery left or more than 3km from station)
+G13: If the car is left with less than 20% battery or at more than 3km from the nearest power grid station, the system charges 30% more on the last ride.
 
-G14: Money saving option: distribution algorithm with user preferences to define a station where the user must leave the car % based on 100% charged battery
+G14: The user can enable the saving money option and so by giving his final destination to the system, this one is able give him a station as destination (based on distribution of cars algorithm and available plugs in the station as well as the final destination of the user) and so if the user leave the car at this place he will get a special discount.
 
 1.2.	Scope (world, share phenomena)
 1.3.	Definitions, acronyms, and abbreviations [Vianney]
@@ -101,8 +101,30 @@ G9: The system stop charging once he leave the car parked in a safe area
 	-The system can detect if the vehicle is parked (engine stopped)
 	-The system stop to charge the user if the vehicle is parked in safe area
 	
-G10: Passenger discount
+G10: 10% discount on last ride if the car detect at least two passengers
+	-The car can detect the amount of passengers in the car
 	
+	Definition of LAST RIDE?! => end of current ride?
+
+	-The system apply a 10% discount on the last ride of the user if he car detect more than 2 passengers
+
+G11: The system apply 20% discount on the last ride if the car is left with more than 50% battery (over full battery)
+	-The system can read the battery’s level of the car
+	-The system apply a 20% discount on the last ride of the user if the battery’s level is higher than 50% when the car is left.
+
+G12: If the user park the car in a special parking area, where the car can be charged, and take care to plug the car. The system apply 30% discount on the last ride.
+	-The system know the position of special parking area and can link them to the position of the vehicle (same positioning system)
+	-The system can detect if the user park the car in a special parking area
+	-The system can detect if the user plugged the car and so apply a 30% discount on the last ride of the user.
+
+G13: If the car is left with less than 20% battery or at more than 3km from the nearest power grid station, the system charges 30% more on the last ride.	
+	-The system know the position of the power grid stations
+	-If the car is left farther than 3km from a power grid station or with less than 20% battery, the system charges 30% more on the last ride of the user.
+
+G14: The user can enable the saving money option and so by giving his final destination to the system, this one is able give him a station as destination (based on distribution of cars algorithm and available plugs in the station as well as the final destination of the user) and so if the user leave the car at this place he will get a special discount.
+	-The user can activate a saving money option and enter his final destination
+	-The system know the number of available plugs per station
+	-The system have an algorithm to find the best station with available plugs in order to be as close as possible from the final destination of the user and optimize an uniform distribution of the cars among the city
 	
 
 2.3.	User characteristics (actors) [Vianney]
