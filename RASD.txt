@@ -6,7 +6,22 @@ Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
 
 
 1.	Introduction
+These days the mobile industry is in a constant development and their technologies don’t stop to improve. 
+In particular the mobile applications sector has become one of the more active in the market. Indeed, these applications are easy and fast to use, everywhere and at any time, appealing the customers. 
+The Enjoy Company provides a real-time car reservation service, where its clients can book electric cars near a given address and pick it within an hour. 
+In order to satisfy their customers and ease the use of their services, Enjoy Company decides to build a mobile application: PowerEnjoy. 
+This one creates a portable interface between the driver, his account and the available cars, enhancing the efficiency of the services.
+
 1.1.	Purpose (goals)
+The PowerEnjoy application needs the client to be registered in its database before he can reserve a car, for security and payment reasons (credential information, driver license, and identity card). 
+After he logs in, the mobile app allows him to reserve a car around an address or his GPS position. 
+Then it provides him information about his reservation on the main page. The application also allows the client to cancel his reservation and unlock the reserved car when he his near it.
+After the ride the application locks the car and sends an email to the client with the bill of the ride. 
+The mobile application can moreover give discounts and charges in function of the client’s ride such as sharing the car or plug it in power grid.  
+
+The PowerEnjoy application is built in order to ensure an easy and clear reservation service as well as an effective data collecting and saving. 
+This refers the PowerEnjoy application simplifies the customer’s uses, optimises the time to reserve a car and adjusts the price of the ride according to the driver. 
+
 Goals:
 
 G1: Allow user to register to the system  by providing credential and payment informations
@@ -38,6 +53,15 @@ G13: If the car is left with less than 20% battery or at more than 3km from the 
 G14: The user can enable the saving money option and so by giving his final destination to the system, this one is able give him a station as destination (based on distribution of cars algorithm and available plugs in the station as well as the final destination of the user) and so if the user leave the car at this place he will get a special discount.
 
 1.2.	Scope (world, share phenomena)
+With the improvement of mobile phones, which performances compete some laptops ’ones; the development of mobile applications is the best way to create reliable platforms for company. 
+The PowerEnjoy application is a product reserved to mobile; it permits an easy access to internet connexion and GPS navigation (provides by the mobile phone) for running.
+Clients are drivers who would use this application quickly in town, to reach specific places without using common transports or taxis. 
+Drivers can reach any places in town because of the available parking widespread in it, covering the entirety of the city areas. Driver can easily found a car, the application main page giving a map to guide him to it. 
+It is not expensive, Enjoy Company providing electric cars and drivers owning discounts by sharing it, plugging it or economizing the batteries. 
+The driver’s ride is monitored by the sensors in the car, which communicate in real time to the application system, this one providing back the price, the discounts or charges on the navigation screen of the car. 
+By this way the driver is constantly informed of the price, the discounts and the charges (ride not respectful to the other clients: low battery, not park in safe area) he has on his ride.
+The navigation system of the cars is useful for the driver to find a safe area near his destination where he can park. The saving money option also helps him to find a special parking area to plug in the car. 
+
 1.3.	Definitions, acronyms, and abbreviations [Vianney]
 System: Element which regroup each software pieces of the project
 Management system: Part of the system which take care of users an cars
