@@ -24,17 +24,17 @@ This refers the PowerEnjoy application simplifies the customer’s uses, optimises
 
 Goals:
 
-G1: Allow user to register to the system  by providing credential and payment informations
+G1: Allow driver to register to the system  by providing credential and payment informations
 
-G2: Allow user to log into the system with provided password
+G2: Allow driver to log into the system with provided password
 
-G3: User can locate available cars within a certain distance around him or an address
+G3: Driver can locate available cars within a certain distance around him or an address
 
-G4: User can book a car for up to 1hour before pick it up
+G4: Driver can book a car for up to 1hour before pick it up
 
-G5: A booked car but not picked up within one hour generate 1€ fee for the user
+G5: A booked car but not picked up within one hour generate 1€ fee for the driver
 
-G6: A user close enough to a car booked by him must be able to open it
+G6: A driver close enough to a car booked by him must be able to open it
 
 G7: The system start charging once engine ignite
 
@@ -46,11 +46,11 @@ G10: 10% discount on last ride if the car detect at least two passengers
 
 G11: The system apply 20% discount on the last ride if the car is left with more than 50% battery (over full battery)
 
-G12: If the user park the car in a special parking area, where the car can be charged, and take care to plug the car. The system apply 30% discount on the last ride.
+G12: If the driver park the car in a special parking area, where the car can be charged, and take care to plug the car. The system apply 30% discount on the last ride.
 
 G13: If the car is left with less than 20% battery or at more than 3km from the nearest power grid station, the system charges 30% more on the last ride.
 
-G14: The user can enable the saving money option and so by giving his final destination to the system, this one is able give him a station as destination (based on distribution of cars algorithm and available plugs in the station as well as the final destination of the user) and so if the user leave the car at this place he will get a special discount.
+G14: The driver can enable the saving money option and so by giving his final destination to the system, this one is able give him a station as destination (based on distribution of cars algorithm and available plugs in the station as well as the final destination of the driver) and so if the driver leave the car at this place he will get a special discount.
 
 1.2.	Scope (world, share phenomena)
 With the improvement of mobile phones, which performances compete some laptops ’ones; the development of mobile applications is the best way to create reliable platforms for company. 
@@ -58,20 +58,15 @@ The PowerEnjoy application is a product reserved to mobile; it permits an easy a
 Clients are drivers who would use this application quickly in town, to reach specific places without using common transports or taxis. 
 Drivers can reach any places in town because of the available parking widespread in it, covering the entirety of the city areas. Driver can easily found a car, the application main page giving a map to guide him to it. 
 It is not expensive, Enjoy Company providing electric cars and drivers owning discounts by sharing it, plugging it or economizing the batteries. 
-The driver’s ride is monitored by the sensors in the car, which communicate in real time to the application system, this one providing back the price, the discounts or charges on the navigation screen of the car. 
-By this way the driver is constantly informed of the price, the discounts and the charges (ride not respectful to the other clients: low battery, not park in safe area) he has on his ride.
+The driver’s ride is monitored by the sensors in the car, which communicate in real time to the application system, this one providing back the price, the discounts or charges on the navigation screen of the car. By this way the driver is constantly informed of the price, the discounts and the charges (ride not respectful to the other clients: low battery, not park in safe area) he has on his ride.
 The navigation system of the cars is useful for the driver to find a safe area near his destination where he can park. The saving money option also helps him to find a special parking area to plug in the car. 
 
 1.3.	Definitions, acronyms, and abbreviations [Vianney]
 System: Element which regroup each software pieces of the project
-Management system: Part of the system which take care of users an cars
-
-User: any people interacting with the system through the car or the application
-Driver: a user who is driving	a car
+Management system: Part of the system which take care of drivers an cars
+Driver: any people interacting with the system through the car or the application
 Car: any electric car involved in the project through the system
-
-Application: Program providing an interface between the system and the user through a smartphone
-
+Application: Program providing an interface between the system and the driver through a smartphone
 Safe area: A zone defined by a set of position with special characteristics 
 Special parking area: A zone defined by a set of position with more special characteristics  
 Power grid station: A place where an electric car can be charged
@@ -86,81 +81,81 @@ Car status: attribute of a car to define if it is available or not (boolean)
 2.1.1.	Class diagram [Noëlie]
 2.1.2.	State diagrams [Noëlie]
 2.2.	Product functions  (requirements) [Vianney]
-G1: Allow user to register to the system  by providing credential and payment informations
+G1: Allow driver to register to the system  by providing credential and payment informations
 	-Store provided informations
 	-Link payment credential to payment system
 	-Ensure confidentiality and security
 	-Return password to log into the system
-	-Check already existing user
+	-Check already existing driver
 
-G2: Allow user to log into the system with provided password
+G2: Allow driver to log into the system with provided password
 	-Check credential 
 	-Allow access if the informations are right
 	
-G3: User can locate available cars within a certain distance around him or an address
-	-User can input address and/or range
+G3: Driver can locate available cars within a certain distance around him or an address
+	-Driver can input address and/or range
 	-The management system know if a car is available or not
-	-The management system can compare cars locations with the provided address or the user’s 	locations
+	-The management system can compare cars locations with the provided address or the driver’s 	locations
 	-The application can show those cars and their locations
 
 
-G4: User can book a car for up to 1 hour before pick it up
-	-User cannot book the car for more than one later than the current time.
-	-User must pick a car among the available ones
+G4: Driver can book a car for up to 1 hour before pick it up
+	-Driver cannot book the car for more than one later than the current time.
+	-Driver must pick a car among the available ones
 	-The system must change the status of the car from available to unavailable
 
-G5: A booked car but not picked up within one hour generate 1€ fee for the user
-	-The system charge the user who booked the car for 1€
+G5: A booked car but not picked up within one hour generate 1€ fee for the driver
+	-The system charge the driver who booked the car for 1€
 	-The system change the status of the car from unavailable to available
 
-G6: A user close enough to a car booked by him must be able to open it
-	-The system can detect when a user is close to the car that I booked
-	-A user close to his booked car can open it
+G6: A driver close enough to a car booked by him must be able to open it
+	-The system can detect when a driver is close to the car that I booked
+	-A driver close to his booked car can open it
 
 G7: The system start charging once engine ignite
-	-The system can detect that the user ignited the engine
-	-The charge is linked to the user through the system, kept in memory, and grow based on rate
-	-The charging rate and the current amount of charge is display with an interface in the car, for the user
+	-The system can detect that the driver ignited the engine
+	-The charge is linked to the driver through the system, kept in memory, and grow based on rate
+	-The charging rate and the current amount of charge is display with an interface in the car, for the driver
 
 G8: The set of safe area is predefined by the management system
 	-The system know the position of safe area and can link them to the position of the vehicle (same positioning system)
 
 G9: The system stop charging once he leave the car parked in a safe area
 	-The system can detect if the vehicle is parked (engine stopped)
-	-The system stop to charge the user if the vehicle is parked in safe area
+	-The system stop to charge the driver if the vehicle is parked in safe area
 	
 G10: 10% discount on last ride if the car detect at least two passengers
 	-The car can detect the amount of passengers in the car
 	
 	Definition of LAST RIDE?! => end of current ride?
 
-	-The system apply a 10% discount on the last ride of the user if he car detect more than 2 passengers
+	-The system apply a 10% discount on the last ride of the driver if he car detect more than 2 passengers
 
 G11: The system apply 20% discount on the last ride if the car is left with more than 50% battery (over full battery)
 	-The system can read the battery’s level of the car
-	-The system apply a 20% discount on the last ride of the user if the battery’s level is higher than 50% when the car is left.
+	-The system apply a 20% discount on the last ride of the driver if the battery’s level is higher than 50% when the car is left.
 
-G12: If the user park the car in a special parking area, where the car can be charged, and take care to plug the car. The system apply 30% discount on the last ride.
+G12: If the driver park the car in a special parking area, where the car can be charged, and take care to plug the car. The system apply 30% discount on the last ride.
 	-The system know the position of special parking area and can link them to the position of the vehicle (same positioning system)
-	-The system can detect if the user park the car in a special parking area
-	-The system can detect if the user plugged the car and so apply a 30% discount on the last ride of the user.
+	-The system can detect if the driver park the car in a special parking area
+	-The system can detect if the driver plugged the car and so apply a 30% discount on the last ride of the driver.
 
 G13: If the car is left with less than 20% battery or at more than 3km from the nearest power grid station, the system charges 30% more on the last ride.	
 	-The system know the position of the power grid stations
-	-If the car is left farther than 3km from a power grid station or with less than 20% battery, the system charges 30% more on the last ride of the user.
+	-If the car is left farther than 3km from a power grid station or with less than 20% battery, the system charges 30% more on the last ride of the driver.
 
-G14: The user can enable the saving money option and so by giving his final destination to the system, this one is able give him a station as destination (based on distribution of cars algorithm and available plugs in the station as well as the final destination of the user) and so if the user leave the car at this place he will get a special discount.
-	-The user can activate a saving money option and enter his final destination
+G14: The driver can enable the saving money option and so by giving his final destination to the system, this one is able give him a station as destination (based on distribution of cars algorithm and available plugs in the station as well as the final destination of the driver) and so if the driver leave the car at this place he will get a special discount.
+	-The driver can activate a saving money option and enter his final destination
 	-The system know the number of available plugs per station
-	-The system have an algorithm to find the best station with available plugs in order to be as close as possible from the final destination of the user and optimize an uniform distribution of the cars among the city
+	-The system have an algorithm to find the best station with available plugs in order to be as close as possible from the final destination of the driver and optimize an uniform distribution of the cars among the city
 	
 
-2.3.	User characteristics (actors) [Vianney]
-The ‘user’ 
+2.3.	Driver characteristics (actors) [Vianney]
+The ‘driver’ 
 2.4.	Constraints [Vianney]
-Ensure safety of user informations and transactions
+Ensure safety of driver informations and transactions
 
-The system is compliant with local laws about users informations
+The system is compliant with local laws about drivers informations
 
 The car position can be known at anytime, anywhere
 
@@ -193,9 +188,9 @@ Car
 
 -We can communicate with the car at anytime, anywhere
 
--There is an interface to communicate with the user
+-There is an interface to communicate with the driver
 
-User
+Driver
 
 - He has a driver license, piece of identity and mean of payment
 
@@ -207,7 +202,7 @@ User
 
 3.	Specific Requirements
 3.1.	External Interface Requirements
-3.1.1.	User Interfaces [Rémi]
+3.1.1.	Driver Interfaces [Rémi]
 3.1.2.	Hardware Interfaces
 3.1.3.	Software Interfaces
 3.1.4.	Communication Interfaces
@@ -218,7 +213,7 @@ User
 3.2.1.2.	First Scenario
 	-	John wants to visits the Duomo with Claire and Marie. He has heard about the PowerEnjoy app by a friend, so he wants to try and downloads it on his mobile.
 	-   He registers on the app, giving his name, his email, his payment information, his driver license and a copy of his identity card. 
-	- 	He receives a confirmation of his registration and his user password by email.
+	- 	He receives a confirmation of his registration and his driver password by email.
 	-	He logs in the app, selects the reservation mode and chooses 1.5km as maximal distance from his position where he wants to find a car. 
 	-	PowerEnjoy provides him a map with the stations around him, according to the distance, with the indication of the available cars.
 	-	He selects a car in the nearest station, at 500m from him. 
