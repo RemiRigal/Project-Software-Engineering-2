@@ -39,16 +39,20 @@ G14: The user can enable the saving money option and so by giving his final dest
 
 1.2.	Scope (world, share phenomena)
 1.3.	Definitions, acronyms, and abbreviations [Vianney]
-User
-Car
+System: Element which regroup each software pieces of the project
+Management system: Part of the system which take care of users an cars
 
-Application (Input and output for user)
-Management system (Global management for car and users)
+User: any people interacting with the system through the car or the application
+Driver: a user who is driving	a car
+Car: any electric car involved in the project through the system
 
-Safe area
-Special parking area
+Application: Program providing an interface between the system and the user through a smartphone
 
-Car status
+Safe area: A zone defined by a set of position with special characteristics 
+Special parking area: A zone defined by a set of position with more special characteristics  
+Power grid station: A place where an electric car can be charged
+
+Car status: attribute of a car to define if it is available or not (boolean)
 1.4.	Reference Documents
 1.5.	Used Tools
 1.6.	Overview
@@ -128,9 +132,54 @@ G14: The user can enable the saving money option and so by giving his final dest
 	
 
 2.3.	User characteristics (actors) [Vianney]
+The ‘user’ 
 2.4.	Constraints [Vianney]
+Ensure safety of user informations and transactions
+
+The system is compliant with local laws about users informations
+
+The car position can be known at anytime, anywhere
+
+The system can work with most of online mean of payment
+
+
+
+
+
 2.5.	Assumptions and Dependencies (Domain) [Vianney]
-- We assume that the amount of safe areas is enough to cover efficiently the entire city in which the system evolves
+
+- We assume that the amount of safe areas and power grid stations is enough to cover efficiently the entire city in which the system evolves
+
+
+System
+
+- We know the position of the car at anytime, anywhere
+
+- You can only use the smartphone application to access to the system
+
+- We know the position of safe areas, special parking areas and power grid stations
+
+Society
+
+-The society have a maintenance and insurance service for cars
+
+Car
+
+-The car can count the number of passengers
+
+-We can communicate with the car at anytime, anywhere
+
+-There is an interface to communicate with the user
+
+User
+
+- He has a driver license, piece of identity and mean of payment
+
+- We can trust the provided informations
+
+- He has a smartphone with localisation system
+
+- The driver is legally responsible for his actions
 
 3.	Specific Requirements
 3.1.	External Interface Requirements
@@ -223,7 +272,10 @@ Use case name: AppRegistration
 	Exceptions:
 	-	If the connection is lost, the app page is reloaded and the Driver has to fill it again
 	-	If the email is already in the database, the app page is reloaded with an error message 
-	Special Requirements: ?
+	Special Requirements: 
+The Driver can ask for a new validation email if he did not receive it
+The database can store properly Driver's information
+			
 	 
 Functional requirement 1.1
 
@@ -244,7 +296,8 @@ Use cases name: DriverLogIn
 	- 	If the password does not correspond to the email in the database, the app page is reloaded with an error message.
 	- 	If the Driver selects the "forget password" function, the Driver has to fill in the email entries and submits. 
 		The System checks the email in the database and sends the associated password by email to the Driver or prints an error.
-	Special Requirements: ?
+	Special Requirements: 
+The system must provide a safe way for the Driver to get back his password
 	 
 Functional requirement 2.1
 
