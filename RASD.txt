@@ -58,7 +58,8 @@ The PowerEnjoy application is a product reserved to mobile; it permits an easy a
 Clients are drivers who would use this application quickly in town, to reach specific places without using common transports or taxis. 
 Drivers can reach any places in town because of the available parking widespread in it, covering the entirety of the city areas. Driver can easily found a car, the application main page giving a map to guide him to it. 
 It is not expensive, Enjoy Company providing electric cars and drivers owning discounts by sharing it, plugging it or economizing the batteries. 
-The driver’s ride is monitored by the sensors in the car, which communicate in real time to the application system, this one providing back the price, the discounts or charges on the navigation screen of the car. By this way the driver is constantly informed of the price, the discounts and the charges (ride not respectful to the other clients: low battery, not park in safe area) he has on his ride.
+The driver’s ride is monitored by the sensors in the car, which communicate in real time to the application system, this one providing back the price, the discounts or charges on the navigation screen of the car. 
+By this way the driver is constantly informed of the price, the discounts and the charges (ride not respectful to the other clients: low battery, not park in safe area) he has on his ride.
 The navigation system of the cars is useful for the driver to find a safe area near his destination where he can park. The saving money option also helps him to find a special parking area to plug in the car. 
 
 1.3.	Definitions, acronyms, and abbreviations [Vianney]
@@ -70,11 +71,17 @@ Application: Program providing an interface between the system and the driver th
 Safe area: A zone defined by a set of position with special characteristics 
 Special parking area: A zone defined by a set of position with more special characteristics  
 Power grid station: A place where an electric car can be charged
-
 Car status: attribute of a car to define if it is available or not (boolean)
+
 1.4.	Reference Documents
 1.5.	Used Tools
 1.6.	Overview
+The Requirements Analysis and Specifications Document is the support piece of this project. It presents the different requirements, with explanations about the application domain of the system and its development. 
+It is the starting point for all the future evolution of the software, providing a basis for estimations (size or cost of the project), for testing process and for requirements changes.
+In the following parts of the document are describing the product with its main features, then the specific requirements, the alloy modelling and finally the future development.
+In the describing part is presented the application class and state diagrams, its major requirements, its users, its constraints and assumptions. 
+In the second part, the external, functional and performance requirements are provided, with the scenarios, use cases and system attributes definitions. 
+In the alloy part is implemented the model of the application and presented the world generated. Finally the repartition of the hours of work follows the part on the future development.
 
 2.	Overall Description 
 2.1.	Product perspective (external interfaces)
@@ -292,8 +299,8 @@ Use case name: AppRegistration
 	-	If the connection is lost, the app page is reloaded and the Driver has to fill it again
 	-	If the email is already in the database, the app page is reloaded with an error message 
 	Special Requirements: 
-The Driver can ask for a new validation email if he did not receive it
-The database can store properly Driver's information
+	- 	The Driver can ask for a new validation email if he did not receive it
+	-	The database can store properly Driver's information
 			
 	 
 Functional requirement 1.1
@@ -316,7 +323,7 @@ Use cases name: DriverLogIn
 	- 	If the Driver selects the "forget password" function, the Driver has to fill in the email entries and submits. 
 		The System checks the email in the database and sends the associated password by email to the Driver or prints an error.
 	Special Requirements: 
-The system must provide a safe way for the Driver to get back his password
+	-	The system must provide a safe way for the Driver to get back his password
 	 
 Functional requirement 2.1
 
