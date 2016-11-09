@@ -73,8 +73,8 @@ Special parking area: A zone defined by a set of position with more special char
 Power grid station: A place where an electric car can be charged
 Car status: attribute of a car to define if it is available or not (boolean)
 
-1.4.	Reference Documents
-1.5.	Used Tools
+1.4.	Reference Documents [Noëlie]
+1.5.	Used Tools [Noëlie]
 1.6.	Overview
 The Requirements Analysis and Specifications Document is the support piece of this project. It presents the different requirements, with explanations about the application domain of the system and its development. 
 It is the starting point for all the future evolution of the software, providing a basis for estimations (size or cost of the project), for testing process and for requirements changes.
@@ -88,6 +88,7 @@ In the alloy part is implemented the model of the application and presented the 
 2.1.1.	Class diagram [Noëlie]
 2.1.2.	State diagrams [Noëlie]
 2.2.	Product functions  (requirements) [Vianney]
+
 G1: Allow driver to register to the system  by providing credential and payment informations
 	-Store provided informations
 	-Link payment credential to payment system
@@ -104,7 +105,6 @@ G3: Driver can locate available cars within a certain distance around him or an 
 	-The management system know if a car is available or not
 	-The management system can compare cars locations with the provided address or the driver’s 	locations
 	-The application can show those cars and their locations
-
 
 G4: Driver can book a car for up to 1 hour before pick it up
 	-Driver cannot book the car for more than one later than the current time.
@@ -170,8 +170,6 @@ The system can work with most of online mean of payment
 
 
 
-
-
 2.5.	Assumptions and Dependencies (Domain) [Vianney]
 
 - We assume that the amount of safe areas and power grid stations is enough to cover efficiently the entire city in which the system evolves
@@ -208,8 +206,8 @@ Driver
 - The driver is legally responsible for his actions
 
 3.	Specific Requirements
-3.1.	External Interface Requirements
-3.1.1.	Driver Interfaces [Rémi]
+3.1.	External Interface Requirements[Rémi]
+3.1.1.	User Interfaces [Rémi]
 3.1.2.	Hardware Interfaces
 3.1.3.	Software Interfaces
 3.1.4.	Communication Interfaces
@@ -279,7 +277,7 @@ Driver
 	- 	He leaves the car, which locks and is available again.
 	-	Simone receives a message with the amount of money he will pay: 44€.
 
-3.2.2.	Use cases diagram [Rémi]
+3.2.2.	Use cases diagram [Noëlie]
 [Noëlie]
 3.2.3.	Use cases
 Use case 1
@@ -299,11 +297,10 @@ Use case name: AppRegistration
 	-	If the connection is lost, the app page is reloaded and the Driver has to fill it again
 	-	If the email is already in the database, the app page is reloaded with an error message 
 	Special Requirements: 
-	- 	The Driver can ask for a new validation email if he did not receive it
-	-	The database can store properly Driver's information
-			
-	 
+					 
 Functional requirement 1.1
+	- 	The Driver can ask for a new validation email if he did not receive it 
+	-	The database can store properly Driver's information
 
 Use case 2
 Use cases name: DriverLogIn
@@ -420,13 +417,13 @@ Functional requirement 6.1
 
 
 3.3.	Non-functional requirements [Rémi]
-3.3.1.	Architectural consideration [Rémi]
 
-3.4.	Design Constraints
+
+3.4.	Design Constraints [Rémi]
 3.4.1.	Standards compliance 
 3.4.2.	Hardware limitations
 
-3.5.	Software System Attributes
+3.5.	Software System Attributes [Vianney]
 3.5.1.	Reliability 
 3.5.2.	Availability 
 3.5.3.	Security 
@@ -436,18 +433,18 @@ Functional requirement 6.1
 3.6. Other Requirements
 
 4.	Alloy modelling
-4.1.	Model
+4.1.	Model [Noëlie sign]
 4.2.	Alloy result
 4.3.	World generated
 
-5.	Future development
+5.	Future development [Vianney]
 
 6.	Hours of work
 6.1.	Vianney Payelle
 6.2.	Rémi Rigal
 6.3.	Noëlie Ramuzat
 
-Appendices
+Appendices 
 
 Index
 
