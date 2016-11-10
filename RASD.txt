@@ -68,10 +68,10 @@ Management system: Part of the system which take care of drivers an cars
 Driver: any people interacting with the system through the car or the application
 Car: any electric car involved in the project through the system
 Application: Program providing an interface between the system and the driver through a smartphone
-Safe area: A zone defined by a set of position with special characteristics 
-Special parking area: A zone defined by a set of position with more special characteristics  
-Power grid station: A place where an electric car can be charged
-Car status: attribute of a car to define if it is available or not (boolean)
+Safe area: A zone defined by a set of position where the car van be safely parked
+Power grid station: A place where an electric car can be parked and plugged to recharge, with a defined number of plugs
+Car status: Attribute of a car to define if it is available or not (boolean)
+Driver status: Attribute of a driver that define if he booked a car, driving one or prevented to booking a car (and for how long)
 
 1.4.	Reference Documents [Noëlie]
 1.5.	Used Tools [Noëlie]
@@ -299,8 +299,13 @@ Use case name: AppRegistration
 	Special Requirements: 
 					 
 Functional requirement 1.1
-	- 	The Driver can ask for a new validation email if he did not receive it 
+	-	The application provide a register interface
+	-	The informations are safely transmitted
 	-	The database can store properly Driver's information
+	- 	Lost connection management
+	-	Check if the email provided is already in the database
+	-	Return password by email
+	-	Link payment information to payment system
 
 Use case 2
 Use cases name: DriverLogIn
@@ -320,9 +325,14 @@ Use cases name: DriverLogIn
 	- 	If the Driver selects the "forget password" function, the Driver has to fill in the email entries and submits. 
 		The System checks the email in the database and sends the associated password by email to the Driver or prints an error.
 	Special Requirements: 
-	-	The system must provide a safe way for the Driver to get back his password
+	
 	 
 Functional requirement 2.1
+	- 	The application provide a login interface
+	-	Check that the information provided match the database’s information
+	- 	Lost connection management
+	-	The informations are safely transmitted
+	-	The system must provide a safe way for the Driver to get back his password
 
 Use case 3
 Use cases name: CarReservation
@@ -332,8 +342,8 @@ Use cases name: CarReservation
 	Flow of Events: 
 	-	The Driver enters his location, by giving an adress or selecting his GPS position.
 	- 	The Driver chooses a maximal distance from the selected location to find a car. 
-	-	The System finds the station around the location, according to the distance and the available cars. It sends them on a map to the Driver's mobile.
-	-	The Driver selects a car in a proposed station and validates the reservation.
+	-	The System finds the available cars around the location, according to the distance. It sends them on a map to the Driver's mobile.
+	-	The Driver selects a car among them and validates the reservation.
 	-	The System registers the reservation in the database, by locking the car for the Driver during 1hour : the car is unavailable on the PowerEnjoy app during 1hour.
 	-	The System sends an email of confirmation to the Driver.
 	Termination condition: 
@@ -341,9 +351,18 @@ Use cases name: CarReservation
 	Exceptions:
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.	
 	-	If the Driver had already reserved a car or is forbidden to reserve one,  the "Reserve car" function is not available.
-	Special Requirements: ?	
+	Special Requirements: 
 	
 Functional requirement 3.1
+	- 	Lost connection management
+	-	A driver can only have one car linked to him, either driving or booked
+	-	A driver cannot book a car if his status prevent him
+	-	As soon as a car is booked, her status move from available to unavailable
+	-	The system know the car and the driver status
+	-	The system knows and can compare the position of the user with cars
+	-	An algorithm can return the available cars within a given distance from the position given by the user, on a map
+
+	
 	 
 Use case 4
 Use cases name:  CancelReservation
@@ -358,9 +377,10 @@ Use cases name:  CancelReservation
 	-	The Driver received the cancel confirmation by email and the notification.
 	Exceptions:
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.
-	Special Requirements: ?
+	Special Requirements: 
 
 Functional requirement 4.1
+	-
 	 
 Use case 5
 Use case name:  CarUnloking
@@ -370,7 +390,7 @@ Participating actors:
 	Flow of Events: 
 	-	The System accesses to the location of the Driver by using the GPS of his mobile. 
 	-	The System compares this location with the car's one and unlock it.
-	-	The Driver gets in the car and sees on the navigation screen the price of the ride, the amount of money/min and the discount or charge of the ride.
+	-	The Driver gets in the car and sees on the navigation screen the current price of the ride, the amount of money/min and the discount on price of the ride.
 	Exit condition: 
 	-	The Driver start the car.
 	Exceptions:
@@ -382,6 +402,12 @@ Participating actors:
 	Special Requirements: ?
 
 Functional requirement 5.1
+
+	-	When a user doesn’t pick a car his booked car within 1 hour, the system charge him for 1€, set the car to available, and prevent the user to book a car for next 3 hours
+	- 	Lost connection management
+	-	The system can detect if the user is close to the car when he asks to unlock the car
+	-	There is an unlock function on the interface of the application
+	
 
 Use case 6
 Use cases name:  RideAndCarLock
