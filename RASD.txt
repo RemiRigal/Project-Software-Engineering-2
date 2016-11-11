@@ -388,7 +388,7 @@ Use cases name:  CancelReservation
 	-	Driver
 	Entry condition: The Driver logs in and selects the "Cancel Resevation" function of the app before the end of the reservation.
 	Flow of Events: 
-	-	The System puts the car as available in the database and sends an email confirming the cancel & giving the bell of the Driver reservation: 1€. 
+	-	The System puts the car as available in the database and sends an email confirming the cancel & the bill of the Driver reservation: 1€. 
 	-	The Driver is notified by the System that it is impossible for him to select a car again in the next 2h.
 	- 	The System registers the Driver as forbidden to reserve a car for the next 2hours in the database.
 	Exit condition: 
@@ -398,7 +398,10 @@ Use cases name:  CancelReservation
 	Special Requirements: 
 
 Functional requirement 4.1
-	-
+	-	Lost connection management
+	-	A cancelled booking prevent the driver to book a car for 2 hours and set the car to available
+	-	An email is send to the driver to confirm the cancellation
+	-	The driver is charged for 1€
 	 
 Use case 5
 Use case name:  CarUnloking
@@ -415,13 +418,13 @@ Participating actors:
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.
 	- 	If the Driver is too far from the car, The System doesn't unlock the car and sends an error message to the Driver.
 	-	If the Driver is not detected at the station one hour after the reservation or is detected after this time, then the System registers the car as available again in the database with its new informations.
-		The System sends an email giving the bell of the Driver reservation: 1€, and notified him that he can't select a car again in the next 3h.
+		The System sends an email giving the bill of the Driver reservation: 1€, and notified him that he can't select a car again within the next 3h.
 		The System registers the Driver as forbidden to reserve a car for the next 3hours in the database.
 	Special Requirements: ?
 
 Functional requirement 5.1
 
-	-	When a user doesn’t pick a car his booked car within 1 hour, the system charge him for 1€, set the car to available, and prevent the user to book a car for next 3 hours
+	-	When a user doesn’t pick his booked car within 1 hour, the system charge him for 1€, set the car to available, and prevent the user to book a car for next 3 hours
 	- 	Lost connection management
 	-	The system can detect if the user is close to the car when he asks to unlock the car
 	-	There is an unlock function on the interface of the application
@@ -440,21 +443,35 @@ Use cases name:  RideAndCarLock
 	- 	The System is notified that the car is empty and parked in a safe area with the GPS of the car. It stops charging the price, locks the car and registers it as available at the new station in database with its new informations.
 	-	The System sends an email to the Driver with the price of the ride and the discount or charge he will have on his last ride.
 	Exit condition: 
-	-	The Driver received the bell of the ride.
+	-	The Driver received the bill of the ride.
 	Exceptions:
-	-	If the Driver doesn't park in a safe area, the System stops charging the price, locks the car and sends an email to the Maintenance with the location of the car. Then it doubles theprice of the Driver's ride.
-	-	If the Driver selects the saving money option on the car's navigation screen and gives his destination, then the System provides him, on the screen, a safe area where he can have a discount.
+	-	If the Driver doesn't park in a safe area, the System stops charging the price, locks the car and sends an email to the Maintenance with the location of the car. Then it doubles the price of the Driver's ride.
+	
+
+
+	[-	If the Driver selects the saving money option on the car's navigation screen and gives his destination, then the System provides him, on the screen, a safe area where he can have a discount.] ERROR
+
+	
+
 	-	If the car detects more than 2 passengers, it informs the System which increases the discount of the last ride by 10% on the navigation screen & in the database.
 	-	If the battery level is > 50%, the car informs the System which increases the discount of the last ride by 20% on the navigation screen & in the database.
 	- 	If the Driver plugs the car on a power grid within 5minutes after leaving the car, the System is notified and increases the discount of the last ride by 30% on the navigation screen & in the database.
 	-	If the battery level is < 80%, the car informs the System which increases the charge of the last ride by 30% on the navigation screen & in the database.
-	-	If the Driver parks further than 3km from the nearest power grid station the System detects it and increases the charge of the last ride by 30% on the navigation screen & in the database.
+	-	If the Driver parks further than 3 km from the nearest power grid station the System detects it and increases the charge of the last ride by 30% on the navigation screen & in the database.
 	Special Requirements:
-	-	The System has to know how cominicate with the Maintenance.
+	-	The System has to know how to communicate with the Maintenance.
 	- 	The price of the ride must be adapted to the amount of money/min. 
 	-	The discount or charge must be adapted to the battery levels/power grid distance/number of passengers.
 
 Functional requirement 6.1
+	-	An algorithm can compute the total price of the ride based on the standard price of the ride and extra charge/discount based on informations provided by the car: location, battery’s level, passengers etc. …
+	-	The final price is displayed in the car to inform the Driver
+	-	If the Driver plug the car within 5 min after left it, he got an additional 30% discount and then the system use Driver’s payment informations to charge him and send him an email with the bill and payment confirmation
+	-	Once the car is left, it is set to available
+	-	If the car is left with less than 20% battery, in an unsafe area or farther than 3km from the nearest power grid station, the car is set to unavailable and the Maintenance service is called to move it to a power grid station and plug it
+	-	Cars that have been moved by the Maintenance are set available if they are at least 70% of battery
+	
+	
 
 3.2.4.	Sequence diagrams [Noëlie]
 3.2.5.	Activity diagrams [Noëlie]
@@ -478,8 +495,11 @@ The system must support 500 times the total number of provided car of simultaneo
 3.5.1.	Reliability 
 3.5.2.	Availability 
 3.5.3.	Security 
+		Follow the most critical norms in each domain given the country where it have to be deployed. 
 3.5.4.	Maintainability 
+		The development of the system is fully documented and we must have the possibility to improve algorithms 
 3.5.5.	Portability
+		Mains smartphones stores: google play store, apple store, windows store
 
 3.6. Other Requirements
 
