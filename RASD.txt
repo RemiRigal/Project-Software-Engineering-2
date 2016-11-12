@@ -189,9 +189,9 @@ Domain assumption:
 - We know the position of the car at anytime, anywhere
 - The car can count the number of passengers
 - We can communicate with the car at anytime, anywhere
-- He has a driver license, piece of identity and mean of payment
+- The driver has a driver license, piece of identity and mean of payment
 - We can trust the provided informations
-- He has a smartphone with localisation system
+- The driver has a smartphone with localisation system
 - The driver is legally responsible for his actions
 - There is an interface in the car to communicate with the driver
 - The society has a maintenance and insurance service for cars
