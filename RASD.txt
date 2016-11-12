@@ -196,6 +196,16 @@ Domain assumption:
 
 - You can only use the smartphone application to access to the system
 
+Explicit assumption:
+
+- A user can only drive one car at a time
+
+- A user cannot drive a car that is charging
+
+- Two cars cannot have the same position 
+
+- A person cannot have two identities
+
 Text assumption:
 - We assume that the amount of safe areas and power grid stations is enough to cover efficiently the entire city in which the system evolves
 
@@ -205,7 +215,7 @@ Text assumption:
 
 -A Driver cannot book a car with less than 20% battery
 
-
+-A damaged car is manually set to unavailable by the maintenance service (a driver cannot book a damaged car)
 
 3.	Specific Requirements
 3.1.	External Interface Requirements[Rémi]
