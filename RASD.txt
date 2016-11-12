@@ -102,6 +102,7 @@ G2: Allow driver to log into the system with provided password
 	
 G3: Driver can locate available cars within a certain distance around him or an address
 	-Driver can input address and/or range
+	-The system manage a database of the cars of the society
 	-The management system know if a car is available or not
 	-The management system can compare cars locations with the provided address or the driver’s 	locations
 	-The application can show those cars and their locations
@@ -111,9 +112,11 @@ G4: Driver can book a car for up to 1 hour before pick it up
 	-Driver must pick a car among the available ones
 	-The system must change the status of the car from available to unavailable
 
-G5: A booked car but not picked up within one hour generate 1€ fee for the driver
-	-The system charge the driver who booked the car for 1€
+G5: A reserved car but not picked up generate 1€ fee for the driver and  prevent him to reserve another car for a fixed amount of time
+	-The system charge the driver who reserved the car for 1€
 	-The system change the status of the car from unavailable to available
+	-If the driver cancelled the reservation before it expires, the system update his status so he can’t book a car for the next 2 hours otherwise  he can’t book a car for the next 3 hours
+	
 
 G6: A driver close enough to a car booked by him must be able to open it
 	-The system can detect when a driver is close to the car that I booked
@@ -172,30 +175,12 @@ The system can work with most of online mean of payment
 
 2.5.	Assumptions and Dependencies (Domain) [Vianney]
 
-- We assume that the amount of safe areas and power grid stations is enough to cover efficiently the entire city in which the system evolves
-
-
-System
-
+Domain assumption:
 - We know the position of the car at anytime, anywhere
 
-- You can only use the smartphone application to access to the system
+- The car can count the number of passengers
 
-- We know the position of safe areas, special parking areas and power grid stations
-
-Society
-
--The society have a maintenance and insurance service for cars
-
-Car
-
--The car can count the number of passengers
-
--We can communicate with the car at anytime, anywhere
-
--There is an interface to communicate with the driver
-
-Driver
+- We can communicate with the car at anytime, anywhere
 
 - He has a driver license, piece of identity and mean of payment
 
@@ -204,6 +189,23 @@ Driver
 - He has a smartphone with localisation system
 
 - The driver is legally responsible for his actions
+
+- There is an interface in the car to communicate with the driver
+
+- A driver than unlock a car will ignite the engine
+
+- You can only use the smartphone application to access to the system
+
+Text assumption:
+- We assume that the amount of safe areas and power grid stations is enough to cover efficiently the entire city in which the system evolves
+
+- We know the position of safe areas, special parking areas and power grid stations
+
+-The society have a maintenance and insurance service for cars
+
+-A Driver cannot book a car with less than 20% battery
+
+
 
 3.	Specific Requirements
 3.1.	External Interface Requirements[Rémi]
@@ -499,13 +501,19 @@ PowerEnjoy doesn't have to meet any hardware limitations.
 
 3.5.	Software System Attributes [Vianney]
 3.5.1.	Reliability 
+	Critical parts of the system: payment, car management and database must have a high reliability (in reference to high reliability of such like system on the market). 
+	Interaction with user over the application should be as reliable as most of such application on the market.
+	
 3.5.2.	Availability 
+	Car management system, payment system and global system should have a very high availability (99,999%)  
+	We can afford a lower reliability for user management (99,9% for example)
 3.5.3.	Security 
-		Follow the most critical norms in each domain given the country where it have to be deployed. 
+		Follow the most critical norms in each domain given the country where it have to be deployed. The car opening should be at least as safe as the current current remote opening system (like key proximity detection)
 3.5.4.	Maintainability 
 		The development of the system is fully documented and we must have the possibility to improve algorithms 
 3.5.5.	Portability
 		Mains smartphones stores: google play store, apple store, windows store
+		And most of current smartphones on the market (including those released up to 3 years ago)
 
 3.6. Other Requirements
 
@@ -515,6 +523,13 @@ PowerEnjoy doesn't have to meet any hardware limitations.
 4.3.	World generated
 
 5.	Future development [Vianney]
+	-Include traffic management in saving money algorithm
+	-Improve user management availability and reliability
+	-Improve autonomy management in the user interface: Drivers should know if they will be able to reach their destination with the car that they want to use, and avoid more charges
+	-Analyse Driver’s data and path to optimise car’s distribution and management
+	-Improve booking system with algorithm based on planned destination and traffic: book a car that we know it should arrive soon for example
+	-Provide estimation on numbers of available cars within an area for a given time
+	
 
 6.	Hours of work
 6.1.	Vianney Payelle
