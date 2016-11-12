@@ -120,7 +120,7 @@ G4: Driver can reserve a car for up to 1 hour before pick it up
 
 G5: A reserved car but not picked up within one hour generate 1€ fee for the driver and forbidden him to reserve another one within 3 hours
 	-The system charges the driver who reserved the car for 1€
-	-The system changes the status of the driver from can reserve a car to cannot reserve a car for 3 hours
+	-The system changes the status of the car from unavailable to available
 	-If the driver cancelled the reservation before it expires, the system update his status so he can’t book a car for the next 2 hours otherwise  he can’t book a car for the next 3 hours
 	
 
@@ -189,46 +189,27 @@ Domain assumption:
 - We know the position of the car at anytime, anywhere
 - The car can count the number of passengers
 - We can communicate with the car at anytime, anywhere
-
 - He has a driver license, piece of identity and mean of payment
-
 - We can trust the provided informations
-
 - He has a smartphone with localisation system
-
 - The driver is legally responsible for his actions
-
 - There is an interface in the car to communicate with the driver
--The society has a maintenance and insurance service for cars
-
-Station
-
-- We assume that the amount of safe areas and power grid stations is enough to cover efficiently the entire city in which the system evolves
-
+- The society has a maintenance and insurance service for cars
 - A driver than unlock a car will ignite the engine
-
 - You can only use the smartphone application to access to the system
 
 Explicit assumption:
-
 - A user can only drive one car at a time
-
 - A user cannot drive a car that is charging
-
 - Two cars cannot have the same position 
-
-- We can trust the provided details
+- We can trust the details provided by the driver
 
 Text assumption:
 - We assume that the amount of safe areas and power grid stations is enough to cover efficiently the entire city in which the system evolves
-
 - We know the position of safe areas, special parking areas and power grid stations
-
--The society have a maintenance and insurance service for cars
-
--A Driver cannot book a car with less than 20% battery
-
--A damaged car is manually set to unavailable by the maintenance service (a driver cannot book a damaged car)
+- The society have a maintenance and insurance service for cars
+- A Driver cannot book a car with less than 20% battery
+- A damaged car is manually set to unavailable by the maintenance service (a driver cannot book a damaged car)
 
 3.	Specific Requirements
 3.1.	External Interface Requirements
