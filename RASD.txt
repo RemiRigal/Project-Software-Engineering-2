@@ -7,14 +7,14 @@ Vianney Payelle - Rémi Rigal - Noëlie Ramuzat
 
 1.	Introduction
 These days the mobile industry is in constant development and their technologies don’t stop to improve. 
-In particular, the mobile applications sector has become one of the more active in the market. Indeed, these applications are easy and fast to use, everywhere and at any time, appealing the customers. 
+In particular, the mobile applications sector has become one of the more active in the market. Indeed, those applications are easy and fast to use, everywhere and at any time, appealing the customers. 
 The Enjoy Company provides a real-time car reservation service, where its clients can reserve electric cars near a given address and pick it within an hour. 
 In order to satisfy their customers and ease the use of their services, Enjoy Company decided to build a mobile application: PowerEnjoy. 
 This one creates a portable interface between the driver, his account and the available cars, enhancing the efficiency of the services.
 
 1.1.	Purpose 
 The Requirements Analysis and Specifications Document is the support piece of this project. The aim of this document is to presents the different requirements, with explanations about the application domain of the system and its development. 
-It is the starting point for all the future evolution of the software, providing a basis for estimations (size or cost of the project), for testing process and for requirements changes.
+It is the starting point for all the future evolution of the software, providing a basis for estimations (size and cost of the project), for testing process and for requirements changes.
 
 1.2.	Scope 
 The scope of the project PowerEnjoy, which is a service based on mobile application, is to manage, design, build, and implement a service aimed at facilitating public transportation.
@@ -70,7 +70,7 @@ Application: Program providing an interface between the system and the driver th
 Safe area: A zone defined by a set of position where the car van be safely parked
 Power grid station: A place where an electric car can be parked and plugged to recharge, with a defined number of plugs
 Car status: Attribute of a car to define if it is available or not (boolean)
-Driver status: Attribute of a driver that define if he reserved a car, driving one or prevented to reserving a car (and for how long)
+Driver status: Attribute of a driver that define if he reserved a car, is driving one or forbidden to reserve a car (and for how long)
 Last ride: The current ride of the driver
 
 1.5.	Reference Documents [Noëlie]
@@ -513,6 +513,16 @@ PowerEnjoy doesn't have to meet any hardware limitations.
 
 6.	Hours of work
 6.1.	Vianney Payelle
+	26/10 3h
+	29/10 2h
+	31/10 1h
+	1/11	1h
+	4/11	2h
+	6/11	2h
+	7/11	2h
+	9/11	1h
+	11/11	3h
+	12/11	2h
 6.2.	Rémi Rigal
 6.3.	Noëlie Ramuzat
 
