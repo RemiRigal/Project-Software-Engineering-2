@@ -72,7 +72,7 @@ sig SafeArea{
 	position: one Position,
 	places: one Int,
 }
-{places >0}
+{places > 0}
 sig ChargingStation extends SafeArea{
 	capacity: set Plug,
 	chargingCars: set Car
