@@ -474,7 +474,7 @@ At least 95% of these requests must be performed in less than 3 seconds. All oth
 The system must support 500 times the total number of provided car of simultaneous users.
 
 3.3.2   Human factors requirements
-
+Considering that every driver can make a mistake, the system shall allow every driver to update his account details at any moment.
 
 
 3.4.	Design Constraints [Rémi]
@@ -492,7 +492,7 @@ PowerEnjoy doesn't have to meet any hardware limitations.
 3.5.4.	Maintainability 
 		The development of the system is fully documented and we must have the possibility to improve algorithms 
 3.5.5.	Portability
-		Main smartphone stores: google play store, apple store, windows store
+		Main smartphone stores: Google play store, apple store, windows store
 
 3.6. Other Requirements
 
