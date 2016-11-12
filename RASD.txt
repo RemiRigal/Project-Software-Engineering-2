@@ -31,7 +31,7 @@ This refers the PowerEnjoy application simplifies the customer’s uses, optimises
 1.3. Goals
 Here are the main features that PowerEnjoy will grant its users.
 
-G1: Allow driver to register to the system  by providing credential and payment informations
+G1: Allow driver to register to the system by providing credential and payment details
 
 G2: Allow driver to log into the system with provided password
 
@@ -47,7 +47,7 @@ G7: The system start charging once engine ignite
 
 G8: The set of safe area is predefined by the management system
 
-G9: The system stop charging once he leave the car parked in a safe area
+G9: The system stop charging once he leaves the car parked in a safe area
 
 G10: 10% discount on last ride if the car detect at least two passengers
 
@@ -70,7 +70,7 @@ Application: Program providing an interface between the system and the driver th
 Safe area: A zone defined by a set of position where the car van be safely parked
 Power grid station: A place where an electric car can be parked and plugged to recharge, with a defined number of plugs
 Car status: Attribute of a car to define if it is available or not (boolean)
-Driver status: Attribute of a driver that define if he reserved a car, driving one or prevented to reserveing a car (and for how long)
+Driver status: Attribute of a driver that define if he reserved a car, driving one or prevented to reserving a car (and for how long)
 Last ride: The current ride of the driver
 
 1.5.	Reference Documents [Noëlie]
@@ -84,19 +84,19 @@ It presents also the application's major requirements, the characteristics of it
 Specific Requirements:
 In this second part, the external, functional and performance requirements are provided, with the scenarios, use cases and system attributes definitions. 
 Alloy Model:
-This section provides the implementeation of the application's Alloy model and presentes the world generated.
+This section provides the implementation of the application's Alloy model and presents the world generated.
 Future development:
-In this part ?
+In this part?
 Finally the repartition of the hours of work follows this section.
 
 2.	Overall Description 
 2.1.	Product perspective (external interfaces)
 2.1.1.	Class diagram 
 2.1.2.	State diagrams 
-2.2.	Product functions  (requirements) 
+2.2.	Product functions (requirements) 
 
-G1: Allow driver to register the system by providing credential and payment informations
-	-Store provided informations
+G1: Allow driver to register the system by providing credential and payment details
+	-Store provided details
 	-Link payment credential to payment system
 	-Ensure confidentiality and security
 	-Return password to log into the system
@@ -104,7 +104,7 @@ G1: Allow driver to register the system by providing credential and payment info
 
 G2: Allow driver to log into the system with provided password
 	-Check credential 
-	-Allow access if the informations are right
+	-Allow access if the details are right
 	
 G3: Driver can locate available cars within a certain distance around him or an address
 	-Driver can input address and/or range
@@ -139,7 +139,7 @@ G8: The system starts charging once engine ignite
 G9: The set of safe area is predefined by the management system
 	-The system knows the position of safe area and can link them to the position of the vehicle (same positioning system)
 
-G10: The system stop charging once he leave the car parked in a safe area
+G10: The system stop charging once he leaves the car parked in a safe area
 	-The system can detect if the vehicle is parked (engine stopped)
 	-The system stops charging the driver if the vehicle is parked in safe area
 	
@@ -171,9 +171,9 @@ The target user are clients who would use the PowerEnjoy application quickly in 
 In the document the user is called the ‘driver’.
 
 2.4.	Constraints
-Ensure safety of driver informations and transactions
+Ensure safety of driver details and transactions
 
-The system is compliant with local laws about drivers informations
+The system is compliant with local laws about driver’s details
 
 The car position can be known at anytime, anywhere
 
@@ -210,7 +210,7 @@ Driver
 
 - He has a driver license, piece of identity and mean of payment
 
-- We can trust the provided informations
+- We can trust the provided details
 
 - He has a smartphone with localisation system
 
@@ -223,13 +223,13 @@ All drivers will first be interacting with the system through the smartphone app
 
 The smartphone application shall be composed of 5 different screens which are:
 - Login/Register screen: a simple form the driver fills to log into the application or register into the system
-- Main menu: this screen displays the current reservation of the logged driver if he has one, a menu drawer on the left provides buttons to log out or to reach the following features:
+- Main menu: this screen displays the current reservation of the logged driver if he has one; a menu drawer on the left provides buttons to log out or to reach the following features:
 	- Car finder screen
 	- Car unlocker
 	- Reservation canceller
 	- Account screen
 	- Credentials screen
-- Car finder screen: asks the driver for an address (can use his current location) and gives him informations about all cars around, he can then reserve one of them. This screen is not available when the driver has a running reservation.
+- Car finder screen: asks the driver for an address (can use his current location) and gives him details about all cars around, he can then reserve one of them. This screen is not available when the driver has a running reservation.
 - Car unlocker: provides a single button that can unlock the reserved car if the driver is near its location. This screen is available only when the driver has a running reservation.
 - Reservation canceller: provides a button that can cancel the current reservation. This screen is available only when the driver has a running reservation.
 - Account screen: the driver can consult the settings of his account and his reservation history
@@ -241,7 +241,7 @@ The car screen is a complete navigation system in which the driver can choose to
 The smartphone application shall be compatible with all devices running on iOS (from iOS 6), Android (from version 4.1) and Windows Phone in order to have a large target audience.
 
 3.1.3.	Software Interfaces
-The smartphone application will use the Google Maps API, compatible with all the operating systems above,  to provide a map of the available cars around a given position to the driver.
+The smartphone application will use the Google Maps API, compatible with all the operating systems above, to provide a map of the available cars around a given position to the driver.
 
 	
 3.2.	Functional requirements
@@ -255,13 +255,13 @@ The smartphone application will use the Google Maps API, compatible with all the
 	-	PowerEnjoy provides him a map with the stations around him, according to the distance, with the indication of the available cars.
 	-	He selects a car in the nearest station, at 500m from him. 
 	-	He validates at 2pm. He receives an email, confirming that the car is locked for John until 3pm.
-	-	At 2.05pm John walks to the car and selects the unlock mode of the app, then the car unlockes. 
+	-	At 2.05pm John walks to the car and selects the unlock mode of the app, and then the car unlocks. 
 	-	He gets in the car and sees on the navigation screen the price of the ride: 0€, the actual discount: 0€ and the amount of money/min: 0.8€.
 	-	Then he ticks the money saving option and put his destination. On the car interface, the app indicates him the nearest station from the Duomo where he can have a discount.
 	-	He drives and takes Claire and Marie on the road, the system detects them and the screen prints a discount of 10%.
 	-	Reaching the station after 20 minutes, John parks the car and plugs it. The battery is 40% empty. The price is 16€ and the discount 60% on the screen. 
 	-	John, Claire and Marie leave the car, the car locks and is available again.
-	-	John receives an email with the amount of money he will pay, 7€ and the discount he has : 60%.
+	-	John receives an email with the amount of money he will pay, 7€ and the discount he has: 60%.
 
 3.2.1.3.	Second Scenario
 	-	Katia is already registered on the PowerEnjoy app. She uses the reservation mode to find a car near her flat to go to the cinema; she enters her address on the app. 
@@ -275,14 +275,14 @@ The smartphone application will use the Google Maps API, compatible with all the
 3.2.1.4.	Third Scenario
 	-	Steve selects the reservation mode of the app and enters 1km as maximal distance to find a car. 
 	-	The app provides him a map with the station around him according to the distance, with the indication of the available cars.
-	-	He selects a car with 50% of battery empty in the 3rd station and and validates at 5p.m. 
+	-	He selects a car with 50% of battery empty in the 3rd station and validates at 5p.m. 
 	-	He receives an email, confirming that the car is locked for him until 6pm.
 	-	At 5.40pm, Steve walks to the station, stops near the car and selects the unlock mode of the app. The car is unlocked. 
 	-	He gets in the car and sees on the screen the price of the ride: 0€, the actual discount: 0€ and the amount of money/min: 0.7€.
 	-	He drives 1h until reach his grandparent’s small town. There is only one safe station given by the app, without power grid, the nearest is at 4km from the station. 
-	- 	He parks there, the battery is 81% empty. The screen prints a charge of 60%.
+	- 	He parks there; the battery is 81% empty. The screen prints a charge of 60%.
 	-	He leaves the car, which locks and is available again.
-	-	Steve receives a message with the amount of money he will pay: 67€ and the charge he has on his last ride : 60%.
+	-	Steve receives a message with the amount of money he will pay: 67€ and the charge he has on his last ride: 60%.
 	
 3.2.1.5.	Fourth Scenario
 	- 	Amelie selects the reservation mode of the app, and enters 2km as the maximal distance from her she wants to find a car. 
@@ -290,7 +290,7 @@ The smartphone application will use the Google Maps API, compatible with all the
 	-	She selects a car in the nearest parking and validates at 7p.m. 
 	-	She receives an email, confirming that the car is locked for her until 8p.m.
 	-	But her mother decides at the last moment to come at her house. 
-	- 	So Amelie cancels her reserveing on the app at 7.30p.m.
+	- 	So Amelie cancels her reserving on the app at 7.30p.m.
 	- 	She received an email confirming it, she pays 1€ and the app informs her that she cannot select a car again in the next 2h.
 	- 	The car is available again immediately on the app.
 	
@@ -301,10 +301,10 @@ The smartphone application will use the Google Maps API, compatible with all the
 	-	She receives an email, confirming that the car is locked for her until 7a.m. 
 	-	Then her sister wants to take a car too, she is used to take the account of Anna on PowerEnjoy. She tried to use the reservation mode on her phone but she can't select it.
 	- 	She can only access to the cancel mode.  
-	- 	She asks to Anna if she reserved a car, and if she can drives her to the school. Anna agrees and they live their house.
+	- 	She asks to Anna if she reserved a car, and if she can drive her to the school. Anna agrees and they live their house.
 
 3.2.1.6. Sixth Scenario
-	-	Simone has reserved a car with the PowerEnjoy app. He has picked it in time and drived until his girlfriend's house. The price on the screen is 22€. 
+	-	Simone reserves a car with the PowerEnjoy app. He picks it in time and drives to his girlfriend's house. The price on the screen is 22€. 
 	-	There is no safe area around the house and Simone decides to parks in the street.
 	- 	He leaves the car, which locks and is available again.
 	-	Simone receives a message with the amount of money he will pay: 44€.
@@ -318,9 +318,9 @@ Use case name: AppRegistration
 	Entry condition: 
 	-	The Driver selects the "Registration" function of the PowerEnjoy app
 	Flow of Events: 
-	-	The Driver fills in the registration form : The Driver gives his name, his email, his payment information, his driver license and an identity document.
-	- 	The Driver submits his informations.
-	- 	The System checks if the email is not in the database. Then it creates a new Driver in the database, with the informations given and a new password.
+	-	The Driver fills in the registration form: The Driver gives his name, his email, his payment information, his driver license and an identity document.
+	- 	The Driver submits his details.
+	- 	The System checks if the email is not in the database. Then it creates a new Driver in the database, with the details given and a new password.
 	-	The System sends a registration confirmation to the Driver, with his password, by email.
 	Exit condition: 
 	-	The Driver received his password by email.
@@ -357,7 +357,7 @@ Use cases name: DriverLogIn
 	- 	The application provides a login interface
 	-	Check that the information provided match the database’s information
 	- 	Lost connection management
-	-	The informations are safely transmitted
+	-	The details are safely transmitted
 	-	The system must provide a safe way for the Driver to get back his password
 
 Use case 3
@@ -366,21 +366,21 @@ Use cases name: CarReservation
 	-	Driver
 	Entry condition: The Driver logs in and selects the "Reserve car" function of the app
 	Flow of Events: 
-	-	The Driver enters his location, by giving an adress or selecting his GPS position.
+	-	The Driver enters his location, by giving an address or selecting his GPS position.
 	- 	The Driver chooses a maximal distance from the selected location to find a car. 
 	-	The System finds the available cars around the location, according to the distance. It sends them on a map to the Driver's mobile.
 	-	The Driver selects a car among them and validates the reservation.
-	-	The System registers the reservation in the database, by locking the car for the Driver during 1hour : the car is unavailable on the PowerEnjoy app during 1hour.
+	-	The System registers the reservation in the database, by locking the car for the Driver during 1hour: the car is unavailable on the PowerEnjoy app during 1hour.
 	-	The System sends an email of confirmation to the Driver.
 	Termination condition: 
 	-	The Driver received the reservation confirmation by email.
 	Exceptions:
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.	
-	-	If the Driver had already reserved a car or is forbidden to reserve one,  the "Reserve car" function is not available.	
+	-	If the Driver had already reserved a car or is forbidden to reserve one, the "Reserve car" function is not available.	
 	Functional requirement:
 	- 	Lost connection management
 	-	A driver can only have one car linked to him, either driving or reserved
-	-	A driver cannot reserve a car if his status prevent him
+	-	A driver cannot reserve a car if his status prevents him from doing it
 	-	As soon as a car is reserved, her status move from available to unavailable
 	-	The system knows the car and the driver status
 	-	The system knows and can compare the position of the user with cars
@@ -392,7 +392,7 @@ Use case 4
 Use cases name:  CancelReservation
 	Participating actors:
 	-	Driver
-	Entry condition: The Driver logs in and selects the "Cancel Resevation" function of the app before the end of the reservation.
+	Entry condition: The Driver logs in and selects the "Cancel Reservation" function of the app before the end of the reservation.
 	Flow of Events: 
 	-	The System puts the car as available in the database and sends an email confirming the cancel & the bill of the Driver reservation: 1€. 
 	-	The Driver is notified by the System that it is impossible for him to select a car again in the next 2h.
@@ -403,7 +403,7 @@ Use cases name:  CancelReservation
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.
 	Functional requirement:
 	-	Lost connection management
-	-	A cancelled reserveing prevent the driver to reserve a car for 2 hours and set the car to available
+	-	A cancelled reserving prevent the driver to reserve a car for 2 hours and set the car to available
 	-	An email is send to the driver to confirm the cancellation
 	-	The driver is charged for 1€
 	 
@@ -417,11 +417,11 @@ Participating actors:
 	-	The System compares this location with the car's one and unlock it.
 	-	The Driver gets in the car and sees on the navigation screen the current price of the ride, the amount of money/min and the discount on price of the ride.
 	Exit condition: 
-	-	The Driver start the car.
+	-	The Driver starts the car.
 	Exceptions:
 	-	If the connection is lost the app page is reloaded and the Driver has to fill it again.
 	- 	If the Driver is too far from the car, The System doesn't unlock the car and sends an error message to the Driver.
-	-	If the Driver is not detected at the station one hour after the reservation or is detected after this time, then the System registers the car as available again in the database with its new informations.
+	-	If the Driver is not detected at the station one hour after the reservation or is detected after this time, then the System registers the car as available again in the database with its new details.
 		The System sends an email giving the bill of the Driver reservation: 1€, and notified him that he can't select a car again within the next 3h.
 		The System registers the Driver as forbidden to reserve a car for the next 3hours in the database.
 	Functional requirement:
@@ -436,12 +436,12 @@ Use cases name:  RideAndCarLock
 	Participating actors:
 	-	Driver
 	-	Maintenance
-	Entry condition: The Driver start the car.
+	Entry condition: The Driver starts the car.
 	Flow of Events: 
 	-	The System starts the charging of the money on the navigation screen.
 	-	The Driver takes a ride until the destination.
 	-	The Driver parks in a safe area given by the navigation screen, stops and exits the car.
-	- 	The System is notified that the car is empty and parked in a safe area with the GPS of the car. It stops charging the price, locks the car and registers it as available at the new station in database with its new informations.
+	- 	The System is notified that the car is empty and parked in a safe area with the GPS of the car. It stops charging the price, locks the car and registers it as available at the new station in database with its new details.
 	-	The System sends an email to the Driver with the price of the ride and the discount or charge he will have on his last ride.
 	Exit condition: 
 	-	The Driver received the bill of the ride.
@@ -454,9 +454,9 @@ Use cases name:  RideAndCarLock
 	-	If the battery level is < 80%, the car informs the System which increases the charge of the last ride by 30% on the navigation screen & in the database.
 	-	If the Driver parks further than 3 km from the nearest power grid station the System detects it and increases the charge of the last ride by 30% on the navigation screen & in the database.
 	Functional requirement:
-	-	An algorithm can compute the total price of the ride based on the standard price of the ride and extra charge/discount based on informations provided by the car: location, battery’s level, passengers etc. …
+	-	An algorithm can compute the total price of the ride based on the standard price of the ride and extra charge/discount based on details provided by the car: location, battery’s level, passengers etc. …
 	-	The final price is displayed in the car to inform the Driver
-	-	If the Driver plugs the car within 5 min after left it, he got an additional 30% discount and then the system use Driver’s payment informations to charge him and send him an email with the bill and payment confirmation
+	-	If the Driver plugs the car within 5 min after left it, he got an additional 30% discount and then the system use Driver’s payment details to charge him and send him an email with the bill and payment confirmation
 	-	Once the car is left, it is set to available
 	-	If the car is left with less than 20% battery, in an unsafe area or farther than 3km from the nearest power grid station, the car is set to unavailable and the Maintenance service is called to move it to a power grid station and plug it
 	-	Cars that have been moved by the Maintenance are set available if they are at least 30% of battery
@@ -469,7 +469,7 @@ Use cases name:  RideAndCarLock
 
 3.3.	Non-functional requirements 
 3.3.1   Performance requirements
-The system shall be able to provide fast answers to the driver. The most critical point is the search for available car because the system will have to fetch and send informations about all cars around the driver such as the precise position or the current charge of the battery.
+The system shall be able to provide fast answers to the driver. The most critical point is the search for available car because the system will have to fetch and send details about all cars around the driver such as the precise position or the current charge of the battery.
 At least 95% of these requests must be performed in less than 3 seconds. All others server tasks shall be processed in less than 1 second.
 The system must support 500 times the total number of provided car of simultaneous users.
 
@@ -479,7 +479,7 @@ The system must support 500 times the total number of provided car of simultaneo
 
 3.4.	Design Constraints [Rémi]
 3.4.1.	Standards compliance
-Critical data such as payment informations will be handled by the system, in order to ensure a maximum protection, every payment related changes applied to the database should be recorded in a trace file. For the same purpose, all the transactions between the server and the clients must be secured and traced.
+Critical data such as payment details will be handled by the system, in order to ensure a maximum protection; every payment related changes applied to the database should be recorded in a trace file. For the same purpose, all the transactions between the server and the clients must be secured and traced.
 
 3.4.2.	Hardware limitations
 PowerEnjoy doesn't have to meet any hardware limitations.
@@ -492,7 +492,7 @@ PowerEnjoy doesn't have to meet any hardware limitations.
 3.5.4.	Maintainability 
 		The development of the system is fully documented and we must have the possibility to improve algorithms 
 3.5.5.	Portability
-		Mains smartphones stores: google play store, apple store, windows store
+		Main smartphone stores: google play store, apple store, windows store
 
 3.6. Other Requirements
 
