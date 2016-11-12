@@ -39,7 +39,7 @@ G3: Driver can locate available cars within a certain distance around him or an 
 
 G4: Driver can reserve a car for up to 1hour before pick it up
 
-G5: A reserved car but not picked up within one hour generate 1€ fee for the driver
+G5: A reserved car but not picked up within one hour generate 1€ fee for the driver and forbidden him to reserve another one for few hours
 
 G6: A driver close enough to a car reserved by him must be able to open it
 
@@ -118,7 +118,7 @@ G4: Driver can reserve a car for up to 1 hour before pick it up
 	-Driver must pick a car among the available ones
 	-The system must change the status of the car from available to unavailable
 
-G5: A reserved car but not picked up within one hour generate 1€ fee for the driver and forbidden him to reserve another one within 3 hours
+G5: A reserved car but not picked up within one hour generate 1€ fee for the driver and forbidden him to reserve another one for few hours
 	-The system charges the driver who reserved the car for 1€
 	-The system changes the status of the car from unavailable to available
 	-If the driver cancelled the reservation before it expires, the system update his status so he can’t book a car for the next 2 hours otherwise  he can’t book a car for the next 3 hours
