@@ -22,7 +22,7 @@ DD : Design Document
 1.5.	Used Tools
 
 1.6.	Document structure
-In the following parts of the document are describing 
+In the following parts of the document are describing the different part of the application's design and the needed RASD requirements. 
 Architectural design
 This section introduced the high level architecture of the PowerEnjoy system, its main components and interfaces, its runtime behavior and its design patterns.
 Algorithm design
