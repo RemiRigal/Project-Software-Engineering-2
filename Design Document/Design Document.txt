@@ -1,4 +1,4 @@
-1.	Introduction
+﻿1.	Introduction
 
 1.1.	Purpose
 The Design Document provides a functional description of the PowerEnjoy's system. Its aim is to present the architectural design of the application and to explain the taken decisions for this choice.
@@ -44,10 +44,10 @@ Finally the hours of work repartition follows this section.
 2.4.	Deployment view [Noëlie]
 2.5.	Runtime View [Noëlie]
 2.6.	Component interfaces [Rémi]
-2.7.	Selected architectural styles and patterns
-2.7.1.	Overall Architecture
-2.7.2.	Protocols
-2.7.3.	Design patterns
+2.7.	Selected architectural styles and patterns [vianney]
+2.7.1.	Overall Architecture [vianney]
+2.7.2.	Protocols [vianney]
+2.7.3.	Design patterns [vianney]
 
 2.8.	Other design decisions (if some)
 
