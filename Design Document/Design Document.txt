@@ -36,14 +36,14 @@ Finally the hours of work repartition follows this section.
  
 2.	Architectural design
 
-2.1.	Overview
-2.2.	High level components and their interactions
-2.2.1.	 Subsystems Structure (if some)
+2.1.	Overview [Rémi]
+2.2.	High level components and their interactions [Rémi]
+2.2.1.	 Subsystems Structure [Rémi]
 
-2.3.	Component view
-2.4.	Deployment view
-2.5.	Runtime View
-2.6.	Component interfaces
+2.3.	Component view [Noëlie]
+2.4.	Deployment view [Noëlie]
+2.5.	Runtime View [Noëlie]
+2.6.	Component interfaces [Rémi]
 2.7.	Selected architectural styles and patterns
 2.7.1.	Overall Architecture
 2.7.2.	Protocols
