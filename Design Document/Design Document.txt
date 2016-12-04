@@ -37,7 +37,12 @@ Finally the hours of work repartition follows this section.
 2.	Architectural design
 
 2.1.	Overview [Rémi]
+The PowerEnjoy system has a three tier architecture: a database server, an application server and a user interface. The user interface being composed of the mobile application only, a RESTful API will ensure all the communications between the application server and the client.
+The main benefit of this kind of structural implementation is its flexibility as it becomes simple to have several database servers holding the data or it can easily integrates a cloud system.
+
 2.2.	High level components and their interactions [Rémi]
+The high level components are composed of different layers, the first one is the database component that holds all the data and provides an exhaustive way to trace all sensitive actions such as payment transactions. Then, the application server is responsible for all the logic of the system and is the only component to have access to the database. Thus it provides all the needed informations to the mobile app and the administration computer and the next layer. The latter allows the PowerEnjoy company to monitor the whole system at any time providing the location of all the cars and eventually their current state so that an employee can be informed if maintenance is needed for example. The mobile app communication with the server initiates when the driver opens the application and logs in, the RESTful API will ensures the exchange of data between those two components.
+
 2.2.1.	 Subsystems Structure [Rémi]
 
 2.3.	Component view [Noëlie]
