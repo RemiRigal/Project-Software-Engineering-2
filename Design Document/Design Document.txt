@@ -51,7 +51,54 @@ The high level components are composed of different layers, the first one is the
 2.6.	Component interfaces [Rémi]
 2.7.	Selected architectural styles and patterns [vianney]
 2.7.1.	Overall Architecture [vianney]
+Our application will be divided into 3 tiers:
+	1.Database ( DAL: Data Access Layer )
+	2.Application Logic ( BLL: Business Logic Layer )
+	3.Thin Client ( a simple and easy interface to BLL )
+		
 2.7.2.	Protocols [vianney]
+Our tiers are connected through network and exchange data with the following
+protocols.
+
+PDO: PHP Data Objects used by the BLL to communicate with the DAL.
+currently supported databases:
+	DBLIB: FreeTDS / Microsoft SQL Server / Sybase
+	Firebird: Firebird/Interbase 6
+	IBM (IBM DB2)
+	INFORMIX - IBM Informix Dynamic Server
+	MYSQL: MySQL 3.x/4.0
+	OCI: Oracle Call Interface
+	ODBC: ODBC v3 (IBM DB2 and unixODBC)
+	PGSQL: PostgreSQL
+	SQLITE: SQLite 3.x
+
+PDO is a common protocol used to communicate between a a DAL and BLL and 
+fit well with our project. As a common protocol it will be easier to 
+implement and keep updated (example, community, support etc...). 
+
+RESTful API with JSON used by clients ( mobile apps for user and hidden 
+web client in the car ) to interact with the BLL. 
+API calls that need authentication are
+required to authenticate via HTTP basic authentication for each request. 
+Exchanged data will be secured using SSL.
+as now ( v1 ) our exposed methods are the following:
+	•api/v1/user/info [auth]
+	–GET: get user info
+	–POST/PUT: update/set user data
+	•api/v1/user/request
+	–POST: create a new request for car
+	•api/v1/user/reservation
+	–POST: create a new reservation
+
+
+We also have many other unexposed methods for user and car.
+Below some examples for the car
+	•api/v1/car/ride
+	–POST: create a new ride 
+	•api/v1/car/park
+	–POST: car properly parked
+
+
 2.7.3.	Design patterns [vianney]
 
 2.8.	Other design decisions (if some)
