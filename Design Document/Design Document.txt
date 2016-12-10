@@ -67,14 +67,14 @@ Database : Represents the database used to store persistent data.
 2.5.	Runtime View [Noëlie]
 This sequence diagram explains how the components interact during a driver's registration.
 The driver has to fill the registration form on his mobile application. The registration request is sent with this data as parameters to the system.
-The router transfers the request to the DriverController which verifies on the database if the driver's email doesn't exist yet. 
-If yes, the driver is not registered yet, so the DriverController add him in the database and sends a request to the NotificationHelper. It sends a sms and an email with a password to the driver.
-Finally the DriverController returns the result to the DriverApplication which displays the appropriate message.
+The router transfers the request to the LoginController which transfers it to the DriverController which verifies on the database if the driver's email doesn't exist yet. 
+If yes, the driver is not registered yet, so the DriverController add him in the database and the LoginController sends a request to the NotificationHelper. It sends a sms and an email with a password to the driver.
+Finally the LoginController returns the result to the DriverApplication which displays the appropriate message.
 
 This sequence diagram presents the login operation.
 The driver has to fill his email and password on his mobile application. The login request is then sent to the system with this two data in parameters.
-The router transfers the request to the DriverController which verifies on the database if the driver exists (with his email). And then if it's true, it checks if the password is correct. 
-Then the DriverController returns the result to the DriverApplication which displays the appropriate screen.
+The router transfers the request to the LoginController which transfers it to the DriverController which verifies on the database if the driver exists (with his email). And then if it's true, it checks if the password is correct. 
+Then the LoginController returns the result to the DriverApplication which displays the appropriate screen.
 
 This sequence diagram explains the running of the research.
 The driver has to fill the location and distance he wants to find a car, on his mobile application. The research request is then sent to the system with this two data in parameters.
