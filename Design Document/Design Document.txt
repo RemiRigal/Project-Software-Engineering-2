@@ -46,8 +46,61 @@ The high level components are composed of different layers, the first one is the
 2.2.1.	 Subsystems Structure [Rémi]
 
 2.3.	Component view [Noëlie]
+
+Driver : Represents the driver's mobile application.
+Router : Associates the driver's requests to the appropriate Controller.
+LoginController : Registers the driver in the database or verifies the email and password of this one. Uses the NotificationHelper to send driver's password by email.
+DriverController : Manages the drivers, changes its data in the database.
+ResearchController : Manages the research, using the CarManager to access the location of the car.
+CarManager : Manages the cars' data in the database.
+RideManager : Manages the ride's data in the database. 
+ReservationController : Manages the reservation, using the CarManager and RideManager to access data.
+NotificationHelper : Manages the notifications, using the PushGateway, SMSGateway and MailGateway to interact with the driver by different way. 
+PushGateway : Manages the push notifications.
+SMSGateway : Manages the SMS notifications.
+MailGateway : Manages the email notifications.
+Model :  Represents the world and the data with which the system interacts.
+Database : Represents the database used to store persistent data.
+
+
 2.4.	Deployment view [Noëlie]
 2.5.	Runtime View [Noëlie]
+This sequence diagram explains how the components interact during a driver's registration.
+The driver has to fill the registration form on his mobile application. The registration request is sent with this data as parameters to the system.
+The router transfers the request to the DriverController which verifies on the database if the driver's email doesn't exist yet. 
+If yes, the driver is not registered yet, so the DriverController add him in the database and sends a request to the NotificationHelper. It sends a sms and an email with a password to the driver.
+Finally the DriverController returns the result to the DriverApplication which displays the appropriate message.
+
+This sequence diagram presents the login operation.
+The driver has to fill his email and password on his mobile application. The login request is then sent to the system with this two data in parameters.
+The router transfers the request to the DriverController which verifies on the database if the driver exists (with his email). And then if it's true, it checks if the password is correct. 
+Then the DriverController returns the result to the DriverApplication which displays the appropriate screen.
+
+This sequence diagram explains the running of the research.
+The driver has to fill the location and distance he wants to find a car, on his mobile application. The research request is then sent to the system with this two data in parameters.
+The router transfers the request to the ResearchController which transfers the request to the CarManager. This one verifies on the database if there is some car available around the location according to the distance. 
+Then the CarManager returns the result (false if the list of car is empty, the list otherwise) to the DriverApplication which displays the appropriate screen.
+
+This sequence diagram presents the reservation operation.
+The driver chooses a car and reserves it on his mobile application. The reservation request is then sent to the system with the current hour in parameter.
+The router transfers the request to the DriverController which verifies on the database if the driver is not forbid to reserve a car.
+If it's true,  the request is tranfered to the ReservationController which transfers the request to the CarManager. This one sends a create ride's request to the RideManager with the ID od the car and the email of the driver in parameters. 
+Then the RideManager creates a new ride in the database. These actions done, the  ReservationController updates the status of the driver in the database and asks the NotificationHelper to send a sms and an email of confirmation.
+Finally the ReservationController returns the result to the DriverApplication which displays the appropriate screen.
+
+This sequence diagram explains the running of the reservation's cancel.
+The driver has to confirm his cancel on his mobile application. If he abords the cancel the DriverApplication displays the main screen, if not the cancel request is sent to the system.
+The router transfers the request to the ReservationController which transfers the request to the CarManager. This one updates the car status in the database. 
+Then the ReservationController transfers the request to the DriverController which updates the driver status in the database and asks the NotificationHelper to send a sms and an email of confirmation.
+Finally the ReservationController returns the result to the DriverApplication which displays the confirmation screen.
+
+This sequence diagram presents the unlock operation.
+The driver has to choose the unlock option on his mobile application. The unlock request  is then sent to the system with the driver's location in parameter. 
+The router transfers the request to the ReservationController which transfers the request to the CarManager which transfers to the RideManager. This one verifies in the database if the location of the reserved car is the same as the driver's location.
+If it's true, the RideManager returns the result to the CarManager which will sends the unlock request to the car and the start ride request to the RideManager. This one will then sends the intialize ride request to the car (initializes the navigation screen).
+Then the ReservationController will update the database with the new status of the car and the car.
+Finally the ReservationController returns the result to the DriverApplication which displays the confirmation message or the error message (if the result is false).
+
 2.6.	Component interfaces [Rémi]
 2.7.	Selected architectural styles and patterns [vianney]
 2.7.1.	Overall Architecture [vianney]
