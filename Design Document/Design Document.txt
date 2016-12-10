@@ -114,27 +114,19 @@ Our tiers are connected through network and exchange data with the following
 protocols.
 
 PDO: PHP Data Objects used by the BLL to communicate with the DAL.
-currently supported databases:
-	DBLIB: FreeTDS / Microsoft SQL Server / Sybase
-	Firebird: Firebird/Interbase 6
-	IBM (IBM DB2)
-	INFORMIX - IBM Informix Dynamic Server
-	MYSQL: MySQL 3.x/4.0
-	OCI: Oracle Call Interface
-	ODBC: ODBC v3 (IBM DB2 and unixODBC)
-	PGSQL: PostgreSQL
-	SQLITE: SQLite 3.x
 
 PDO is a common protocol used to communicate between a a DAL and BLL and 
 fit well with our project. As a common protocol it will be easier to 
 implement and keep updated (example, community, support etc...). 
+And it also works with most of database system
 
-RESTful API with JSON used by clients ( mobile apps for user and hidden 
-web client in the car ) to interact with the BLL. 
+An API with JSON used by clients ( mobile apps for user and hidden 
+client in the car ) to interact with the BLL through http methods. 
 API calls that need authentication are
 required to authenticate via HTTP basic authentication for each request. 
 Exchanged data will be secured using SSL.
-as now ( v1 ) our exposed methods are the following:
+
+As now ( v1 ), here are few methods that we will use:
 	•api/v1/user/info [auth]
 	–GET: get user info
 	–POST/PUT: update/set user data
@@ -143,9 +135,6 @@ as now ( v1 ) our exposed methods are the following:
 	•api/v1/user/reservation
 	–POST: create a new reservation
 
-
-We also have many other unexposed methods for user and car.
-Below some examples for the car
 	•api/v1/car/ride
 	–POST: create a new ride 
 	•api/v1/car/park
@@ -153,6 +142,17 @@ Below some examples for the car
 
 
 2.7.3.	Design patterns [vianney]
+The MVC pattern will fit well with our three tier architecture.
+As a common design pattern and known by most programmer, it will 
+provide simplicity and efficiency: the component will be logically 
+grouped and divided, improving task repartition and providing efficient work process.
+
+The API is based on a REST design pattern as you can guess from the http methods.
+As the http and JSON protocol are well known, we can use the many, already avaialbles, tools to work with it
+and there is no need to redefine such protocols (http) like in a Service Oriented Architecture.
+Moreover, a REST architecute will improve the creation of many services like security, 
+monitoring, service quality and many other non functional part of web services.
+
 
 2.8.	Other design decisions (if some)
 
