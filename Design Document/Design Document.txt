@@ -169,6 +169,40 @@ Code of critical part
 
  
 5.	Requirements traceability
+
+The design of the project was decided to cover efficiently the requirements and goals defined in the RASD.
+In this part are presented the design components, defined in this document, associated with the requirements its fufill. 
+
+G1: Allow driver to register the system by providing credential and payment details
+
+G2: Allow driver to log into the system with provided password
+
+G3: Driver can locate available cars within a certain distance around him or an address
+
+G4: Driver can reserve a car for up to 1 hour before pick it up
+
+G5: A reserved car but not picked up within one hour generate 1€ fee for the driver and forbidden him to reserve another one for few hours
+
+G6: Driver can cancel his reservation within the hour after he reserves it.
+	
+G7: A driver close enough to a car reserved by him must be able to open it
+
+G8: The system starts charging once engine ignite
+
+G9: The set of safe area is predefined by the management system
+
+G10: The system stop charging once he leaves the car parked in a safe area
+	
+G11: 10% discount on last ride if the car detects at least two passengers
+
+G12: The system apply 20% discount on the last ride if the car is left with more than 50% battery (over full battery)
+
+G13: If the driver parks the car in a power grid station, where the car can be charged, and takes care to plug the car. The system applies 30% discount on the last ride.
+
+G14: If the car is left with less than 20% battery or at more than 3km from the nearest power grid station, the system charges 30% more on the last ride.	
+
+G15: The driver can enable the saving money option and so by giving his final destination to the system, this one is able to give him a station as destination and if the driver leaves the car and plugs it at this place he will get a special discount.
+
 5.1.	Registration
 5.2.	Login
 5.3.	Reservation
