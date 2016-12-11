@@ -162,25 +162,30 @@ Code of critical part
 3.1.	Part 1
 Reservation:
 
-Reservation(User, Car)
-Pre-condition: Car->status == AVAILABLE, User->status == FREE
+Reservation(Driver, Car)
+Pre-condition: Car->status == AVAILABLE, Driver->status == FREE
 {
-	As  transaction process (do everything (True) or nothing (False) ):
+	As  transaction process 
+	(do everything single action or none, 
+	return True if they are done else Flase ):
 	Process =
 	{
-		ReservationId = User-Car-BidirectionalMap.add(User,Car)
-		User->status = WAITTOPICKUP
+		//Map of association between User and Car
+		//It work in both direction and each association have a unique ID
+		Driver-Car-BidirectionalMap.add(Driver,Car)
+		Driver->status = WAITTOPICKUP
 		Car->status = UNAVAILABLE
-		Return ReservationId
 	}
 	If Process
-		//Send a message on user's phone to confirm the reservation
-		User.sendConfirmedReservation()
-		//Add a one hour timer to the link between the user and the car
+		//Get the id of the association
+		reservationId = Driver-Car-BidirectionalMap.getId(Driver,Car)
+		//Send a message on Driver's phone to confirm the reservation
+		Driver.sendConfirmedReservation()
+		//Add a one hour timer to the link between the driver and the car
 		ReservationId.oneHourClock.start()
 	else
-		//Send a message on user's phone to signal an error
-		User.sendErrorReservation()
+		//Send a message on Driver's phone to signal an error
+		Driver.sendErrorReservation()
 }
 3.2.	Part 2
  
