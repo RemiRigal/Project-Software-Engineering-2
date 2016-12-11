@@ -167,7 +167,7 @@ Pre-condition: Car->status == AVAILABLE, Driver->status == FREE
 {
 	As  transaction process 
 	(do everything single action or none, 
-	return True if they are done else Flase ):
+	return True if they are done else False ):
 	Process =
 	{
 		//Map of association between User and Car
@@ -192,8 +192,9 @@ Pre-condition: Car->status == AVAILABLE, Driver->status == FREE
 4.	User interface design
 4.1.	Mockups (RASD)
 4.2.	UX diagrams (user exp)
-4.3.	BCE diagrams (business controller entity)
-
+4.3.	BCE diagrams 
+In this Business Controller Entity are presented the interactions due to the user actions on his mobile application.
+For the sake of clarity the NotificationHelper is not part of the diagram, the ReservationController and the LoginController have the operation "sendNotification()" which call the NotificationHelper.
  
 5.	Requirements traceability
 
@@ -273,11 +274,5 @@ G15: The driver can enable the saving money option and so by giving his final de
 - The RideManager
 - The CarManager and its interface with the database
 
-5.1.	Registration
-5.2.	Login
-5.3.	Reservation
-5.4.	Cancel
-5.5.	Unlock
-5.6.	Ride
  
 6.	Hours of work
