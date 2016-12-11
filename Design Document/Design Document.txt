@@ -160,6 +160,28 @@ monitoring, service quality and many other non functional part of web services.
 3.	Algorithm design
 Code of critical part 
 3.1.	Part 1
+Reservation:
+
+Reservation(User, Car)
+Pre-condition: Car->status == AVAILABLE, User->status == FREE
+{
+	As  transaction process (do everything (True) or nothing (False) ):
+	Process =
+	{
+		ReservationId = User-Car-BidirectionalMap.add(User,Car)
+		User->status = WAITTOPICKUP
+		Car->status = UNAVAILABLE
+		Return ReservationId
+	}
+	If Process
+		//Send a message on user's phone to confirm the reservation
+		User.sendConfirmedReservation()
+		//Add a one hour timer to the link between the user and the car
+		ReservationId.oneHourClock.start()
+	else
+		//Send a message on user's phone to signal an error
+		User.sendErrorReservation()
+}
 3.2.	Part 2
  
 4.	User interface design
