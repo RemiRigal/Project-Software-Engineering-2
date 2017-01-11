@@ -1,7 +1,8 @@
 1.	Introduction
 
 1.1.	Purpose
-The Integration Test Plan Document provides…. Its aim is to ... This document is a technical description of the … and is intended to be a support for the developers.
+The Integration Test Plan Document provides a dynamic technique to verify and validate the activities and software artifacts of a project.
+Its aim is to find and show the presence of bug in the project. In this document is used systematic testing which uses the structure of the software artifacts and some information on the system's behavior.
 
 1.2.	Scope
 The scope of the project PowerEnjoy, which is a service based on mobile application, is to manage, design, build, and implement a service aimed at facilitating public transportation. 
@@ -18,30 +19,53 @@ This refers the PowerEnjoy application simplifies the customer’s uses, optimises
 1.5.	Used Tools
 
 1.6.	Document structure
-In the following parts of the document are described the different part of the …
+In the following parts of the document are described the main caracteristics of the integration testing plan. 
+Integration Strategy
+This section introduce
+Individual Steps and Test Description
+Tools and Test Equipment Required
+Program Stubs and Test Data Required 
 Finally the hours of work repartition follows this section.
 
-2.	Test Plan
-2.1.	Test Item
-2.2.	Features to be tested
-2.3.	Features not to be tested
-2.4.	Approach
+2. Integration Strategy
+
+2.1 Entry Criteria (test deliverables + testing tasks)
+Specify the criteria that must be met before integration testing of specific elements may begin (e.g., functions must have been unit tested). 
+
+2.2 Elements to be Integrated
+Identify the components to be integrated, refer to your design document to identify  such components in a way that is consistent with your design.
+
+2.3 Integration Testing Strategy (approach)
+Describe the integration testing approach (top-­-down, bottom-­-up, functional groupings, etc.)  and the rationale for the choosing that approach. 
+
+2.4 Sequence of Component/Function Integration
+NOTE: The structure of this section may vary depending on the integration strategy you select in Section 2.3;  use the structure proposed below as a non mandatory guide
+2.4.1 Software Integration Sequence. 
+For each subsystem, identify the sequence in which the software components will be integrated within the subsystem; relate this sequence to any product features that are being built up.
+2.4.2 Subsystem  Integration Sequence.
+Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section. You can refer to Section 2.2 of the test plan example [1] as an example. 
+
 2.5.	Item Pass/Fail Criteria
-2.6.	Suspension Criteria and Resumption Requirements
-2.7.	Test Deliverables
-2.8.	Test Tasks
-2.9.	Environmental Needs
-2.10.	Responsibilities
-2.11.	Schedule
-2.12.	Risks and Contingencies
+2.6.	Environmental Needs
+2.7.	Responsibilities
+2.8.	Risks and Contingencies
 
-3.	Test case specifications
+3.  Individual Steps and Test Description (Test case specifications + Test procedures)
+For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set.
+You may refer to Chapter 3 and Chapter 4 of the test plan example [1] as an  example of what we expect. (NOTE: This is not a detailed description of test protocols. Think of this as the test design phase. 
+Specific protocols will be written to fulfill the goals of the tests in this section.)
 3.1. Integration Test case I1
+3.2. Test procedure TP1
 
-4.	Test procedures
+4. Tools and Test Equipment Required
+Identify all tools and test equipment needed to accomplish the integration.  Refer to the tools presented during the lectures. Explain why and how you are going to use them. Note that you may also use manual testing for some part. 
+Consider manual testing as one of the possible tools you have available.
 
-5.	Hours of work
-5.1.	Vianney Payelle
-5.2.	Rémi Rigal
-5.3.	Noëlie Ramuzat
+5. Program Stubs and Test Data Required 
+Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
+
+6.	Hours of work
+6.1.	Vianney Payelle
+6.2.	Rémi Rigal
+6.3.	Noëlie Ramuzat
 
