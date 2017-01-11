@@ -45,7 +45,7 @@ For each subsystem, identify the sequence in which the software components will 
 2.4.2 Subsystem  Integration Sequence.
 Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section. You can refer to Section 2.2 of the test plan example [1] as an example. 
 
-2.5.	Item Pass/Fail Criteria
+2.5.	Item Pass/Fail Criteria [vianney]
 2.6.	Environmental Needs  [vianney]
 2.7.	Responsibilities [vianney]
 2.8.	Risks and Contingencies [vianney]
