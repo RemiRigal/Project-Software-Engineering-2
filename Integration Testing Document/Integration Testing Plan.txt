@@ -21,10 +21,13 @@ This refers the PowerEnjoy application simplifies the customer’s uses, optimises
 1.6.	Document structure
 In the following parts of the document are described the main caracteristics of the integration testing plan. 
 Integration Strategy
-This section introduce
+This section introduces the elements to be tested and how they will be integrated, describing moreover the other criterias related to the integration. 
 Individual Steps and Test Description
+This part describes the type of tests that will be used to verify that the elements integrated at each step perform as expected.
 Tools and Test Equipment Required
+In this section are presented all the tools and test equipments needed to accomplish the integration. 
 Program Stubs and Test Data Required 
+This part identifies the program stubs and special test data that are required for each integration step.
 Finally the hours of work repartition follows this section.
 
 2. Integration Strategy
