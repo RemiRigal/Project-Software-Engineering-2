@@ -42,13 +42,23 @@ The Design Document to understand the software architecture of the project
 The following functions have to be unit tested with specific input to find the problems early and facilitate the changes of the them. 
 Verify the connexion between :
 The Database and the DriverManager, by making a unit test on the "verifyDriver(String email)" function and that it can be modify with a test on the "addCar(String id, String location, Int battery, Bool available)" function (linking the CarManager and the Database).
-The Mobile Application and the Router, by testing the "verifyRegistrationUser(String[] data)" function and the "displayMainPage()" one.
+The Mobile Application and the Router, by testing the "verifyRegistrationUser(String[] data)" function the "verifyLogin(String email, Sting password)" function and the "displayMainPage()" one.
 The ReservationController and the NotificationHelper, by checking the "sendSMS&MailConfirm()" function.
 The Car and the CarManager, by testing the "unlockCar(Car car)" function (linking the CarManager to the Car)
  The Router and the ReservationController/ResearchController/DriverController/LoginController with the functions "transfertRequest(args)" with the appropriate arguments.
 
-2.2 Elements to be Integrated
-Identify the components to be integrated, refer to your design document to identify  such components in a way that is consistent with your design.
+2.2 Elements to be Integrated[Noëlie]
+In this part are identified the components that have to be integrated to perform the testing plan of the system. Based on the Subsystem and Component View diagrams of the design document, the selected components are the following :
+The RideManager														   /////////////////
+The CarManager														     /////////////////
+The ReservationController									   /////DESSIN/////
+The ResearchController											 //////JOLI///////
+The DriverController											   /////////////////
+The LoginController											 /////////////////
+The NotificationHelper 									   /////////////////
+
+Because they are the code modules that manage all the program and transfert requests to each others or to other external items (the NotificationHelper to the three Gateways) .
+
 
 2.3 Integration Testing Strategy (approach)
 Describe the integration testing approach (top-­-down, bottom-­-up, functional groupings, etc.)  and the rationale for the choosing that approach. 
