@@ -32,8 +32,20 @@ Finally the hours of work repartition follows this section.
 
 2. Integration Strategy
 
-2.1 Entry Criteria (test deliverables + testing tasks)
-Specify the criteria that must be met before integration testing of specific elements may begin (e.g., functions must have been unit tested). 
+2.1 Entry Criteria [Noëlie]
+In this paragraph are presented the documents and unit tests that must have been delivered or done before proceeding the integration test.
+
+The following documents are needed to ensure that the test process has visibility within the overall project and that the test tasks are started at the appropriate time :
+The Requirement Analysis and Specifications Document to state the requirements of the system
+The Design Document to understand the software architecture of the project
+
+The following functions have to be unit tested with specific input to find the problems early and facilitate the changes of the them. 
+Verify the connexion between :
+The Database and the DriverManager, by making a unit test on the "verifyDriver(String email)" function and that it can be modify with a test on the "addCar(String id, String location, Int battery, Bool available)" function (linking the CarManager and the Database).
+The Mobile Application and the Router, by testing the "verifyRegistrationUser(String[] data)" function and the "displayMainPage()" one.
+The ReservationController and the NotificationHelper, by checking the "sendSMS&MailConfirm()" function.
+The Car and the CarManager, by testing the "unlockCar(Car car)" function (linking the CarManager to the Car)
+ The Router and the ReservationController/ResearchController/DriverController/LoginController with the functions "transfertRequest(args)" with the appropriate arguments.
 
 2.2 Elements to be Integrated
 Identify the components to be integrated, refer to your design document to identify  such components in a way that is consistent with your design.
@@ -64,7 +76,7 @@ Specific protocols will be written to fulfill the goals of the tests in this sec
 Identify all tools and test equipment needed to accomplish the integration.  Refer to the tools presented during the lectures. Explain why and how you are going to use them. Note that you may also use manual testing for some part. 
 Consider manual testing as one of the possible tools you have available.
 
-5. Program Stubs and Test Data Required 
+5. Program Stubs and Test Data Required  (test tasks)
 Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
 
 6.	Hours of work
