@@ -94,6 +94,8 @@ For each subsystem, identify the sequence in which the software components will 
 Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section. You can refer to Section 2.2 of the test plan example [1] as an example. 
 
 2.5.	Item Pass/Fail Criteria [vianney]
+
+
 2.6.	Environmental Needs  [vianney]
 Simulation of the element that are external to the software:
 Behavior test: what is happening in case of missing data or wrong data received/send
@@ -111,18 +113,18 @@ to prevent the access of external users and security breach
 
 2.7.	Responsibilities [vianney]
 List of manager for integration test:
-	Network implementation 
-	Security breach of system
-	Simulators development
-	System's general behavior
-	System integration
-	Unit testing
+	Network implementation: development of an internal network tu run secure test 
+	Security of system: run penetration test on the system to detect breach before the test on open network
+	Simulators development: developement of users and cars simulators to minimize the time needed on real condition test
+	General behavior of the system: check the behavior of the system while integrating the different parts
+	System integration: general manager integration plan
+	Unit testing: general manager for unit testing
 
 3.  Individual Steps and Test Description (Test case specifications + Test procedures)
 For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set.
 You may refer to Chapter 3 and Chapter 4 of the test plan example [1] as an  example of what we expect. (NOTE: This is not a detailed description of test protocols. Think of this as the test design phase. 
 Specific protocols will be written to fulfill the goals of the tests in this section.)
-3.1. Integration Test case I1
+3.1. Integration Test case I1 [vianney]
 3.2. Test procedure TP1
 
 4. Tools and Test Equipment Required
