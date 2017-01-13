@@ -45,19 +45,42 @@ The Database and the DriverManager, by making a unit test on the "verifyDriver(S
 The Mobile Application and the Router, by testing the "verifyRegistrationUser(String[] data)" function the "verifyLogin(String email, Sting password)" function and the "displayMainPage()" one.
 The ReservationController and the NotificationHelper, by checking the "sendSMS&MailConfirm()" function.
 The Car and the CarManager, by testing the "unlockCar(Car car)" function (linking the CarManager to the Car)
- The Router and the ReservationController/ResearchController/DriverController/LoginController with the functions "transfertRequest(args)" with the appropriate arguments.
+The Router and the ReservationController/ResearchController/DriverController/LoginController with the functions "transfertRequest(args)" with the appropriate arguments.
+
+From a components point of view, before testing the program should contains an amount of code for each one :
+The Database has to be ready for an architectural point of view, it should lack only some data, so a total completion of 90% of the code
+The DriverManager and LoginManager have to present the possibilities to register, login and reserve a car so a total completion of 70% of the code
+The ResearchManager and ReservationManager have to be nearly achieved  so a total completion of 80% of the code
+The RideManager and NotificationHelper are less critical and can be only  achieved partially  so a total completion of 50% of the code
+
+Before delivering the product , all these components have to present a minimum of 95% of completion.
+This list presents a completion priority that correspond to a critical order of the components, it can explain the following choices made to integrate the sub-systems during the tests.
 
 2.2 Elements to be Integrated[Noëlie]
-In this part are identified the components that have to be integrated to perform the testing plan of the system. Based on the Subsystem and Component View diagrams of the design document, the selected components are the following :
+In this part are identified the components that have to be integrated to perform the testing plan of the system. 
+Based on the Subsystem and Component View diagrams of the Design Document, the selected components are the following :
 The RideManager														   /////////////////
 The CarManager														     /////////////////
 The ReservationController									   /////DESSIN/////
 The ResearchController											 //////JOLI///////
 The DriverController											   /////////////////
 The LoginController											 /////////////////
-The NotificationHelper 									   /////////////////
+The NotificationHelper (Manager)				   /////////////////
 
-Because they are the code modules that manage all the program and transfert requests to each others or to other external items (the NotificationHelper to the three Gateways) .
+These ones have been choosen because they are the code modules that manage all the program. They are in charge of the requests transfer between each others or external items (NotificationHelper to the three Gateways)  to create the model.
+The PowerEnjoy system is based on these interactions between these high-level components which represent the sub-systems of the program and hold a unique functionality (DriverManager : History, Account, Credentials, ReservationManager : Car, Ride).
+According to the denpendencies between the components, some sets of sub-systems can be created to identify clearly the linked components to be integrated in the test. 
+The Driver Systems composed of the DriverManager, the LoginManager and the NotificationHelper sub-systems
+The  Car Systems composed of the CarManager, ResearchManager, ReservationManager, RideManager and NotificationHelper sub-systems
+
+It can be noticed that the NotificationHelper takes part of both sub-systems set due to the dependencies of the ReservationManager and LoginManager to it.
+Moreover this component links the PowerEnjoy system to another one in charge of the Mail/SMS/Push Gateways that already exist and don't have to be tested.
+The other existing component that has to be take into account during the integration tests is the linker between the Database and the other components. This one manages the requests adressed to the Database, it is the Database Manager System.
+These externals components represent the highest level subsystems and because they already have been tested will not be part of the integration tests.
+
+Finally these are the components to be integrated group by set of sub-systems.
+The arrows represent the dependency of each component to the others.
+
 
 
 2.3 Integration Testing Strategy (approach)
@@ -86,8 +109,42 @@ Specific protocols will be written to fulfill the goals of the tests in this sec
 Identify all tools and test equipment needed to accomplish the integration.  Refer to the tools presented during the lectures. Explain why and how you are going to use them. Note that you may also use manual testing for some part. 
 Consider manual testing as one of the possible tools you have available.
 
-5. Program Stubs and Test Data Required  (test tasks)
+5. Program Stubs and Test Data Required  
 Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
+5.1. Program Stubs 
+
+5.2. Test Data [Noëlie]
+To perfom all the test that have been described in the whole document the following data are needed :
+
+A list of unregistered drivers who can have valid or invalid personal information. This list will be used to test the DriverManager, the LoginManager and the NotificationHelper components. The set of data must contain drivers with the following problems :
+Null object
+No arguments 
+Invalid driving license
+Invalid email address 
+Invalid mobile phone number 
+
+A list of cars with valid and invalid caracteristics to test the CarManager and the RideManager components. This set of data has to contain cars with these problems:
+Null object
+No arguments
+Invalid battery level
+Invalid location (in the sea for instance)
+Invalid number of places 
+
+A list of researchs which will have valid or invalid fields. This list will be used to test the ResearchManager component. It must contains researchs with the following problems:
+Null object
+No arguments
+Invalid adress location 
+Invalid maximum distance
+
+A list of reservations with valid and invalid caracteristics to test the ReservationManager component. This set of data has to contain reservations with these problems:
+Null object
+No arguments
+Invalid car id
+Invalid driver email
+
+It is to notice that the safe areas don't have to be tested because they are pre-defined in the management system, which already exist and tested. 
+  
+
 
 6.	Hours of work
 6.1.	Vianney Payelle
