@@ -108,6 +108,23 @@ Specific protocols will be written to fulfill the goals of the tests in this sec
 4. Tools and Test Equipment Required
 Identify all tools and test equipment needed to accomplish the integration.  Refer to the tools presented during the lectures. Explain why and how you are going to use them. Note that you may also use manual testing for some part. 
 Consider manual testing as one of the possible tools you have available.
+4.1. Tools
+To perform all the tests on the several components of the PowerEnjoy system, it is necessary to use some appropriate testing tools. 
+Concerning the unit testing that have to be done before the integration plan, the Mockito test tool will be used. These tests have to be fast and cover small tasks, by using mocking it is possible to abstract the dependencies and have predictable results to ensure that caracteristics.
+Moreover the mocking permits to verify the interactions between items and provides a framework to do so. That's why the Mockito test tool wil also be use to test the business logic of the components which run in the JEE runtime environement.
+Mockito will verify the interactions between the components by creating mocks, it will permit to test the results (data, exceptions and errors) but also to simulate external components like the Notification Gateways . 
+
+Still in the purpose of testing the business logic, the Arquillian  testing tool will be used to check the interactions with the system according to the dependencies and the transaction controls. The tests will be performed against a Java container  to ensure that the components interactions are correctly happening.
+Moreover, using test archive to isolate the classes and ressources it will be easier to focus on the classes/components to test. The Arquillian tool will be used in particular to monitor that the dependencies' injections are respected and to verify that the Database connections are well managed. 
+
+Concerning the tests of the functional behavior and measure of the performance the Jmeter testing tool will be used. The purpose will be to simulate quite heavy load on the server to analyse its strength.
+For instance some simulations will introduce a certain number of drivers that will try to login into the server at the same time, with then different requests to be achieved by the server.
+
+For the concern of the mobile devices, ;;;
+Finally some part of the integration testing plan require the use of manual testing to be performed efficiently. For instance the ..... parts need a manual testing operations. 
+
+4.2. Test Equipment
+
 
 5. Program Stubs and Test Data Required  
 Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
