@@ -83,7 +83,7 @@ The arrows represent the dependency of each component to the others.
 
 
 
-2.3 Integration Testing Strategy (approach)
+2.3 Integration Testing Strategy (approach) [rémi]
 Describe the integration testing approach (top-­-down, bottom-­-up, functional groupings, etc.)  and the rationale for the choosing that approach. 
 
 2.4 Sequence of Component/Function Integration
@@ -95,8 +95,28 @@ Identify the order in which subsystems will be integrated; if you have a single 
 
 2.5.	Item Pass/Fail Criteria [vianney]
 2.6.	Environmental Needs  [vianney]
+Simulation of the element that are external to the software:
+Behavior test: what is happening in case of missing data or wrong data received/send
+	Simulator of car behavior: simulate information exchanged between the car and the system
+	Simulator of user behavior: simulate the behavior of the user through the application
+
+Used before the beta test involving a sample of cars and users and 
+for software components that are directly connected to them
+Will also be used to populate the database
+
+The data provided by the simulators should have the same form as the real ones
+
+Early test involving few data and element will be run in a  private secure network
+to prevent the access of external users and security breach
+
 2.7.	Responsibilities [vianney]
-2.8.	Risks and Contingencies [vianney]
+List of manager for integration test:
+	Network implementation 
+	Security breach of system
+	Simulators development
+	System's general behavior
+	System integration
+	Unit testing
 
 3.  Individual Steps and Test Description (Test case specifications + Test procedures)
 For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set.
