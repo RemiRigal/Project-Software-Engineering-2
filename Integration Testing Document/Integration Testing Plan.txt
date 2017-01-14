@@ -83,10 +83,12 @@ The arrows represent the dependency of each component to the others.
 
 
 
-2.3 Integration Testing Strategy (approach) [rémi]
-Describe the integration testing approach (top-­-down, bottom-­-up, functional groupings, etc.)  and the rationale for the choosing that approach. 
+2.3 Integration Testing Strategy (approach) [Rémi]
+The integration strategy we will use for our system is a bottom-up based strategy. Thus, the integration of the whole software will start with standalone components or components that depend on third party components such as DBMS, the notification systems for mails and SMS and mapping service. The integration will then continue until reaching the most high level component. This strategy will maximize the efficiency and the parallelism of the software development.
+In our case, the most critical components are the ones interfacing with hardware such as the one managing the remote unlocking of the cars or dealing with inboard sensors. Because they are critical, they will be implemented first in order to be able to detect bugs or malfunctions as early as possible.
+In fact, the bottom-up strategy allows earlier testing than the top-down one making the integration process easier to follow and control. Indeed, the testing team can start performing integration testing as soon as a component has been developped, thus providing precise informations about the behaviour of specific components in several states.
 
-2.4 Sequence of Component/Function Integration
+2.4 Sequence of Component/Function Integration [Rémi]
 NOTE: The structure of this section may vary depending on the integration strategy you select in Section 2.3;  use the structure proposed below as a non mandatory guide
 2.4.1 Software Integration Sequence. 
 For each subsystem, identify the sequence in which the software components will be integrated within the subsystem; relate this sequence to any product features that are being built up.
