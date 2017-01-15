@@ -88,12 +88,34 @@ The integration strategy we will use for our system is a bottom-up based strateg
 In our case, the most critical components are the ones interfacing with hardware such as the one managing the remote unlocking of the cars or dealing with inboard sensors. Because they are critical, they will be implemented first in order to be able to detect bugs or malfunctions as early as possible.
 In fact, the bottom-up strategy allows earlier testing than the top-down one making the integration process easier to follow and control. Indeed, the testing team can start performing integration testing as soon as a component has been developped, thus providing precise informations about the behaviour of specific components in several states.
 
-2.4 Sequence of Component/Function Integration [Rémi]
-NOTE: The structure of this section may vary depending on the integration strategy you select in Section 2.3;  use the structure proposed below as a non mandatory guide
-2.4.1 Software Integration Sequence. 
-For each subsystem, identify the sequence in which the software components will be integrated within the subsystem; relate this sequence to any product features that are being built up.
-2.4.2 Subsystem  Integration Sequence.
-Identify the order in which subsystems will be integrated; if you have a single subsystem, 2.4.1 and 2.4.2 are to be merged in a single section. You can refer to Section 2.2 of the test plan example [1] as an example. 
+2.4 Component Integration Sequence [Rémi]
+
+DataAccessManager
+Most of the components of the system rely on the database to work. Therefore, the DataAccessManager will be integrated first using the third party Database Management System.
+
+NotificationHelper
+The NotificationHelper is used by the two sub-systems for the driver and the car management, this one will be done next using the different third party gateways for push messages, text messages and mails.
+
+Driver Management Systems
+- DriverManager
+The DriverManager is the essential component of the driver sub-system as he is the one handling all the personal information of all the clients. It depends on the third party BankTransactionService as it is the one managing the payments from the drivers. It requires also the DataAccessManager to access the data of the drivers in the database.
+- LoginManager
+The LoginManager is responsible for opening and attributing sessions for all the drivers that want to log into to the system or that want to register. This component requires the DriverManager to check the credentials of the drivers, the DataAccessManager to validate and save logs for sessions and the NotificationHelper if sending a email of a SMS is needed, during the registration process for example.
+
+Car Management Systems
+- RideManager
+The RideManager is the component managing the rides, starting from the remote unlocking of the car to the parking of it. He must be able to access and modify data so it depends on the DataAccessManager.
+- CarManager
+The CarManager is the key component of the car management sub-system, it manages all the data concerning the car. Indeed, it needs the CarDataService that provides data from the sensors of the car such as the position, the number of person inside or the battery level. It allows the locking and the unlocking of the car, when used, the CarManager can then start or end a ride through the RideManager he depends on.
+This component requires also the DataAccessManager to update the data in the database.
+- ResearchManager
+The ResearchManager is used whenever a driver looks for an available car, the needed data are fetched from the DataAccessManager and the CarManager.
+- ReservationManager
+The ReservationManager handles the reservation from the drivers, starting when a car is booked and ending when the reservation has been cancelled or paid. It depends on the NotificationHelper to be able to notify the driver on the current status of his reservation. And it requires the DataAccessManager to updates reservation data.
+
+The diagram below sums up the integration flow of the entire system. An arrow from a component C1 and pointing at another component C2 means that the components C1 needs to be integrated before the component C2. 
+///////////////// INSERT DIAGRAM ///////////////////
+
 
 2.5.	Item Pass/Fail Criteria [vianney]
 
@@ -190,5 +212,8 @@ It is to notice that the safe areas don't have to be tested because they are pre
 6.	Hours of work
 6.1.	Vianney Payelle
 6.2.	Rémi Rigal
+13/01/17 : 2h
+14/01/17 : 4h
+15/01/17 : 2h
 6.3.	Noëlie Ramuzat
 
