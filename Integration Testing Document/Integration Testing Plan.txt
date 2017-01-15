@@ -66,6 +66,7 @@ The ResearchController											 //////JOLI///////
 The DriverController											   /////////////////
 The LoginController											 /////////////////
 The NotificationHelper (Manager)				   /////////////////
+The DataAccessManager : it is the link between the Database Management System and the other components
 
 These ones have been choosen because they are the code modules that manage all the program. They are in charge of the requests transfer between each others or external items (NotificationHelper to the three Gateways)  to create the model.
 The PowerEnjoy system is based on these interactions between these high-level components which represent the sub-systems of the program and hold a unique functionality (DriverManager : History, Account, Credentials, ReservationManager : Car, Ride).
@@ -73,14 +74,16 @@ According to the denpendencies between the components, some sets of sub-systems 
 The Driver Systems composed of the DriverManager, the LoginManager and the NotificationHelper sub-systems
 The  Car Systems composed of the CarManager, ResearchManager, ReservationManager, RideManager and NotificationHelper sub-systems
 
-It can be noticed that the NotificationHelper takes part of both sub-systems set due to the dependencies of the ReservationManager and LoginManager to it.
-Moreover this component links the PowerEnjoy system to another one in charge of the Mail/SMS/Push Gateways that already exist and don't have to be tested.
-The other existing component that has to be take into account during the integration tests is the linker between the Database and the other components. This one manages the requests adressed to the Database, it is the Database Manager System.
+It can be noticed that the NotificationHelper and the DataAccessManager take part of both sub-systems set due to the dependencies of the two sub-systems to them.
+Other external components have to be taken into account during the integration tests, but don't have to be tested (because they already exist) :
+The Mail/SMS/Push Gateways, this component is linked to the NotificationHelper, it permits to send the sms/email/notifications to the driver
+The CarDataService, this component is linked to the CarManager, it transfers the data of the car to the PowerEnjoy sytem
+The BankTransactionService, this component is linked to the DriverManager, it permits to perform the payments
+The Database Manager System, linked to the DataAccessManager, it manages the requests adressed to the Database
 These externals components represent the highest level subsystems and because they already have been tested will not be part of the integration tests.
 
 Finally these are the components to be integrated group by set of sub-systems.
-The arrows represent the dependency of each component to the others.
-
+The arrows represent the dependencies of each component to the others. For instance C1 - - - > C2 means that the component C1 is dependent of the component C2.
 
 
 2.3 Integration Testing Strategy (approach) [rémi]
@@ -130,7 +133,7 @@ Specific protocols will be written to fulfill the goals of the tests in this sec
 4. Tools and Test Equipment Required
 Identify all tools and test equipment needed to accomplish the integration.  Refer to the tools presented during the lectures. Explain why and how you are going to use them. Note that you may also use manual testing for some part. 
 Consider manual testing as one of the possible tools you have available.
-4.1. Tools
+4.1. Tools [Noëlie]
 To perform all the tests on the several components of the PowerEnjoy system, it is necessary to use some appropriate testing tools. 
 Concerning the unit testing that have to be done before the integration plan, the Mockito test tool will be used. These tests have to be fast and cover small tasks, by using mocking it is possible to abstract the dependencies and have predictable results to ensure that caracteristics.
 Moreover the mocking permits to verify the interactions between items and provides a framework to do so. That's why the Mockito test tool wil also be use to test the business logic of the components which run in the JEE runtime environement.
@@ -142,17 +145,27 @@ Moreover, using test archive to isolate the classes and ressources it will be ea
 Concerning the tests of the functional behavior and measure of the performance the Jmeter testing tool will be used. The purpose will be to simulate quite heavy load on the server to analyse its strength.
 For instance some simulations will introduce a certain number of drivers that will try to login into the server at the same time, with then different requests to be achieved by the server.
 
-For the concern of the mobile devices, ;;;
-Finally some part of the integration testing plan require the use of manual testing to be performed efficiently. For instance the ..... parts need a manual testing operations. 
+For the concern of the mobile devices, the application must use a raisonnable amount of ressouces (CPU + RAM) because of the limited material ressources of smartphones. For that purpose, a set of monitoring tools provided by some developement platforms, such as Android Studio and XCode Studio, will be used.
+Finally some part of the integration testing plan require the use of manual testing to be performed efficiently. For instance the test of the mobile interface (clicking on buttons...), the general application behavior and the creation of the test data need a manual testing operations. 
 
 4.2. Test Equipment
+For each integration test is needed an appropriate testing environement, with particular equipments. 
+The PowerEnjoy system is composed of three testing areas whose caracteristics have to be defined to match the real conditions.
 
+The first part defined the mobile devices that are required to respect the testing environement. It is needed a smartphone that runs even on an Android platform or an iOs one. For each ones, all the possible range of display size must be tested to ensure that the  application's display and resolution works correctly.
+The second part concerns the sort of cars that have to be used. It must be cars with navigable screens that can be programed to communicate with the PowerEnjoy system.
+The final part is about the cloud infrastructure that will be use to deploy the business logic components. A Platform as a Service (PaaS) will be use. This one will permit to control the software deployment (as a public cloud) with minimal configuration options, with provided networks, servers, storage, OS, 'middleware', database and other services. 
+The PaaS choosen is the CouldFoundry Foundation because it is open source and resepects the same operating environement as the one on which the PowerEnjoy system runs. The CouldFoundry PaaS is a Linux Foundation Collaborative Project.
+The list following describes the services and software components provided by the CouldFoundry PaaS :
+Data Storage: MySQL, PostgreSQL, MongoDB ...
+Mobile: API Gateway, Data Sync, Push Notifications
+Messaging: Pivotal RabbitMQ
+Development: CloudBees Jenkins
+Source code :  Apache License 2.0
+Runtimes & Frameworks : Java 6, Java 7, Java 8  (Spring Framework 3.x, 4.x)
+Application Server : Tomcat or JBOSS 
 
-5. Program Stubs and Test Data Required  
-Based on the testing strategy and test design, identify any program stubs or special test data required for each integration step.
-5.1. Program Stubs 
-
-5.2. Test Data [Noëlie]
+5. Test Data Required [Noëlie]
 To perfom all the test that have been described in the whole document the following data are needed :
 
 A list of unregistered drivers who can have valid or invalid personal information. This list will be used to test the DriverManager, the LoginManager and the NotificationHelper components. The set of data must contain drivers with the following problems :
