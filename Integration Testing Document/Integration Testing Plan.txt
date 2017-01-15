@@ -124,6 +124,9 @@ The diagram below sums up the integration flow of the entire system. An arrow fr
 
 
 2.6.	Environmental Needs  [vianney]
+
+Set of elements and recommandation needed to perform the tests and can be specific to our system.
+
 Simulation of the element that are external to the software:
 Behavior test: what is happening in case of missing data or wrong data received/send
 	Simulator of car behavior: simulate information exchanged between the car and the system
@@ -131,7 +134,7 @@ Behavior test: what is happening in case of missing data or wrong data received/
 
 Used before the beta test involving a sample of cars and users and 
 for software components that are directly connected to them
-Will also be used to populate the database
+Can also be used to populate the database
 
 The data provided by the simulators should have the same form as the real ones
 
@@ -139,6 +142,8 @@ Early test involving few data and element will be run in a  private secure netwo
 to prevent the access of external users and security breach
 
 2.7.	Responsibilities [vianney]
+The persons who will manage the different parts of the tests, splitting work and responsibilities.
+
 List of manager for integration test:
 	Network implementation: development of an internal network tu run secure test 
 	Security of system: run penetration test on the system to detect breach before the test on open network
