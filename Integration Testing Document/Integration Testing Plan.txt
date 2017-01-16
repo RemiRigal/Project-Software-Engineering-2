@@ -142,15 +142,15 @@ Early test involving few data and element will be run in a  private secure netwo
 to prevent the access of external users and security breach
 
 2.7.	Responsibilities [vianney]
-The persons who will manage the different parts of the tests, splitting work and responsibilities.
+In this part are presented the different managers who will work on the several integration test parts.
+They will be splited in groups, according to their domain of expertise and responsabilities, on the following subject :
 
-List of manager for integration test:
-	Network implementation: development of an internal network tu run secure test 
-	Security of system: run penetration test on the system to detect breach before the test on open network
-	Simulators development: developement of users and cars simulators to minimize the time needed on real condition test
-	General behavior of the system: check the behavior of the system while integrating the different parts
-	System integration: general manager integration plan
-	Unit testing: general manager for unit testing
+	The Network implementation part: The group is in charge of the development of an internal network to run secure test 
+	The Security of system part: The group is in charge of running penetration test on the system to detect breach before testing on open network
+	The Simulators development part: The group is in charge of the developement of users and cars simulators to minimize the time needed on real condition test
+	The General behavior of the system part: The group is in charge of checking the behavior of the system during the integrating of the different parts
+	The System integration part: The group is in charge of the general manager integration plan creation 
+	The Unit testing part: The group is in charge of the global management of unit testing
 
 3.  Individual Steps and Test Description (Test case specifications + Test procedures)
 For each step of the integration process above, describe the type of tests that will be used to verify that the elements integrated in this step perform as expected. Describe in general the expected results of the test set.
@@ -234,4 +234,9 @@ It is to notice that the safe areas don't have to be tested because they are pre
 14/01/17 : 4h
 15/01/17 : 2h
 6.3.	Noëlie Ramuzat
+11/01/17 : 30 min
+12/01/17 : 4h
+13/01/17 : 2h
+14/01/17 : 1h
+15/01/17 : 30min
 
