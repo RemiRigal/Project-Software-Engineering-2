@@ -1,6 +1,8 @@
 1.	Introduction
 1.1.	Purpose
-The Project Management Document provides…. Its aim is to ... This document is a technical description of the … and is intended to be a support for the developers.
+The Project Management Document provides a planning estimation and schedule of the PowerEnjoy project development. It also presentes a proposal of task assignment and minimal needed budget. The aim of this document is to be a complete support for the project manager to ensure that the software will be delivered in time. 
+For that purpose, it requires to take into account the context, requirements and the interaction of economical, social, technical and organizational aspects.
+
 1.2.	Scope
 The scope of the project PowerEnjoy, which is a service based on mobile application, is to manage, design, build, and implement a service aimed at facilitating public transportation. The application provides to its target, the client, a way to research an electric car near a position, reserve it and pick it for a ride. At the end the application sends the ride's bill to the client. The PowerEnjoy application needs the client to be registered in its database before he can reserve a car, for security and payment reasons (credential information, driver license, and identity card).  When the client logs in, the mobile application allows him to reserve a car around an address or his GPS position. Then it provides him details about his reservation on the main page.  The application also allows the client to cancel his reservation, unlock the reserved car when he is near it, and access his account details to modify it. 
 After the ride the application locks the car and sends an email to the client with the bill of the ride. The mobile application can moreover give discounts and charges in function of the client’s ride such as sharing the car or plug it in power grid station. The PowerEnjoy application is built in order to ensure an easy and clear reservation service as well as an effective data collecting and saving.  This refers the PowerEnjoy application simplifies the customer’s uses, optimises the time to reserve a car and adjusts the price of the ride according to the driver.
@@ -9,9 +11,24 @@ After the ride the application locks the car and sends an email to the client wi
 1.4.	Reference documents
 1.5.	Used Tools
 1.6.	Document structure
+The document is scheduled in the following way :
+
+Project size, cost and effort estimation 
+In this section are describing the Function Points of the PowerEnjoy project, to estimate its size, and the estimations of the effort and cost needed to achieve the project, with COCOMO II.
+Tasks Schedule
+This part presents the different tasks of the project and their schedule according to the results found in the previous part, so that each part of the project is covered.
+Resource Allocation
+The third part allocates each member of our group to the various tasks, according to our availability and skills.
+Risk Management
+In this section are given the risks that the PowerEnjoy project may enconter and their relevance. Then some general recoveries will be given.
+Finally the hours of work repartition follows this section.
 
 2.	Project size, cost and effort estimation 
-
+In this section are described the estimations made to calculate the cost, the size and the effort needed to produce the PowerEnjoy software system. To achieve the size estimation, the Function Points approach is chosen. It permits to characterize the dimension of the PowerEnjoy software by using its major functionnalities and the average code line produced, here, in Java.
+To perform this point, only the business logic part was used because the user interface one is less representative of the project. Indeed, from a general point of view, it is only composed of the connections to the API and the creation of the interface.  
+Secondly, concerning the cost and effort estimation, the COCOMO II model is applied. By taking into account the characteristics
+of product and process of the system it gives back a result based on statistical variable.
+  
 2.1.	Size estimation: function points 
 2.1.1.	“Internal Logic Files (ILFs)” 
 2.1.2.	“External Logic Files (ELFs)”
