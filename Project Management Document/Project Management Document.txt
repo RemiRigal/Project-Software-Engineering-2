@@ -27,7 +27,7 @@ Finally the hours of work repartition follows this section.
 In this section are described the estimations made to calculate the cost, the size and the effort needed to produce the PowerEnjoy software system. To achieve the size estimation, the Function Points approach is chosen. It permits to characterize the dimension of the PowerEnjoy software by using its major functionnalities and the average code line produced, here, in Java.
 To perform this point, only the business logic part was used because the user interface one is less representative of the project. Indeed, from a general point of view, it is only composed of the connections to the API and the creation of the interface.  
 Secondly, concerning the cost and effort estimation, the COCOMO II model is applied. By taking into account the characteristics
-of product and process of the system it gives back a result based on statistical variable.
+of product and process of the system it gives back a result based on statistical variables.
   
 2.1.	Size estimation: function points 
 2.1.1.	“Internal Logic Files (ILFs)” 
@@ -43,6 +43,11 @@ of product and process of the system it gives back a result based on statistical
 2.2.4.	« Schedule estimation » 
  
 3.	Tasks Schedule
+In this part is given the general PowerEnjoy project schedule.
+This schedule presents the different tasks of the project with the estimate time and resources required to complete them.
+This plan will be regularly revise to take into account the changes (such as requirements, or business goals ones) that may occurs during the evolution of the project and affect all the project.  
+The schedule has been made to avoid delays and organize concurrency between tasks.
+
  
 4.	Resource Allocation
  
