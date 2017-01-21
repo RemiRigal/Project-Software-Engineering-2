@@ -46,10 +46,14 @@ of product and process of the system it gives back a result based on statistical
 In this part is given the general PowerEnjoy project schedule.
 This schedule presents the different tasks of the project with the estimate time and resources required to complete them.
 This plan will be regularly revise to take into account the changes (such as requirements, or business goals ones) that may occurs during the evolution of the project and affect all the project.  
-The schedule has been made to avoid delays and organize concurrency between tasks.
+The schedule has been made to avoid delays and organize concurrency between tasks, however it contains an estimation of the Development, Deployement and Start-up parts conduct because they can't actually be done by us (like the meeting with the stakeholders). 
 
  
 4.	Resource Allocation
+This section presents how the tasks, defined in the previous part, will be assigned to the different members of the PowerEnjoy project team. This allocation include the Development, Deployement and Start-up parts as the Tasks Schedule to assure a realistic presentation of the  project development. Moreover, for the same reason, the ITD tasks have been divided in a different way than what occurs in reality. 
+Finally, for a sake of clarity, the RASD and DD tasks have been grouped in two more general parts. 
+In the Resource Allocation table bellow, the colors represent the group of tasks defined in the tasks schedule : RASD, DD, ITD, Development, Deployement and Start-up.
+
  
 5.	Risk Management
 
