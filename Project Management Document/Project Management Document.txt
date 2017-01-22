@@ -33,7 +33,7 @@ of product and process of the system it gives back a result based on statistical
 2.1.1.	“Internal Logic Files (ILFs)” 
 2.1.2.	“External Logic Files (ELFs)”
 2.1.3.	“External Inputs (EIs)”
-2.1.4.	“External Inquiries (EQs)” 
+2.1.4.	“External Inquiries (EQs)” solution
 2.1.5.	“External Outputs (Eos)”
 2.1.6.	“Overall estimation“
 2.2.	Cost and effort estimation: COCOMO II 
@@ -46,19 +46,32 @@ of product and process of the system it gives back a result based on statistical
 In this part is given the general PowerEnjoy project schedule.
 This schedule presents the different tasks of the project with the estimate time and resources required to complete them.
 This plan will be regularly revise to take into account the changes (such as requirements, or business goals ones) that may occurs during the evolution of the project and affect all the project.  
-The schedule has been made to avoid delays and organize concurrency between tasks, however it contains an estimation of the Development, Deployement and Start-up parts conduct because they can't actually be done by us (like the meeting with the stakeholders). 
+The schedule has been made to avoid delays and organize concurrency between tasks, however it contains an estimation of the Development, Deployment and Start-up parts conduct because they can't actually be done by us (like the meeting with the stakeholders). 
 
  
 4.	Resource Allocation
-This section presents how the tasks, defined in the previous part, will be assigned to the different members of the PowerEnjoy project team. This allocation include the Development, Deployement and Start-up parts as the Tasks Schedule to assure a realistic presentation of the  project development. Moreover, for the same reason, the ITD tasks have been divided in a different way than what occurs in reality. 
+This section presents how the tasks, defined in the previous part, will be assigned to the different members of the PowerEnjoy project team. This allocation include the Development, Deployment and Start-up parts as the Tasks Schedule to assure a realistic presentation of the  project development. Moreover, for the same reason, the ITD tasks have been divided in a different way than what occurs in reality. 
 Finally, for a sake of clarity, the RASD and DD tasks have been grouped in two more general parts. 
-In the Resource Allocation table bellow, the colors represent the group of tasks defined in the tasks schedule : RASD, DD, ITD, Development, Deployement and Start-up.
+In the Resource Allocation table bellow, the colors represent the group of tasks defined in the tasks schedule : RASD, DD, ITD, Development, Deployment and Start-up.
 
  
 5.	Risk Management
+All along the development process and after the deployment the project may face several risks, this section will make an exhaustive list of those risks.
 
+5.1. Risks during the development
+Our development team is composed of only three members, therefore a big risk can be someone being ill or absent for a long period of time. This type of issue is likely to cause delays, especially if the concerned employee is managing a very specific part of the project. An other related contigency can be someone quitting the company, in this case the resulting delays can be significant if no applicant with enough skills is found to replace the vacant position. The best solution to this is to make sure that every employee has enough responsability within the project and that everyone is capable of doing all the parts of the project in order to have a flexible team.
+Similarly, the versioning systems that will be used must be well organized in order to optimize commits and so gain a significant amount of time for the development process.
+Our system also depends on a big panel of external components such as the bank transaction service or the SMS gateway, we then need to be sure that those components will work and be reliable for a reasonnable amount of time. An active support and regular updates are also preferable.
+
+5.2. Risks after the deployment
+Once the PowerEnjoy service is deployed, it can still face many risks such as not being accepted by the taxi driver lobby, in fact, the PowerEnjoy service is providing cars accessible to any individual capable of driving, therefore it causes harm to the taxi drivers by taking off a big part of their customer base. Being a powerful lobby, the best arrangement is to include the union of the taxi drivers in the meeting with the stakeholders in order to find compromise with them.
+Another important aspect that we need to take into account for the PowerEnjoy service is the legislative one. Indeed, the laws regarding driving license and cars may be subject to changes, therefore it is important to stay aware of the new laws that may be problematic for our system. For example the usage of navigation systems with screen may become forbidden, we would then adapt the service that informs the drivers about the power grid positions.
+Then, since the PowerEnjoy service is only accessible through a smartphone our customer base is limited. According to the Pew Research Center, in 2015 in Italy, 60% of adults own a smartphone and 88% of the italians aged between 18 and 34 own one. The risk is that many possible customers will not be able to access the system only because of not owning a smartphone, but the figures are increasing exponentially every year and should not be a concern anymore in several years.
+ 
  
 6.	Hours of work
 6.1.	Vianney Payelle
 6.2.	Rémi Rigal
+21/01/2017: 2h
+22/01/2017: 2h
 6.3.	Noëlie Ramuzat
