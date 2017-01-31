@@ -1,5 +1,6 @@
 3. Classes assigned to the group:
-<state the namespace pattern and name of the classes that were assigned to you.>
+The class assigned to our group is the PdfSurveyServices that permits to build questions and answers for a survey from Pdf documents and to create a final Pdf with the responses.
+There is no namespace in our class.
 
 4. Functional role of assigned set of classes: <elaborate on the functional role you have identified for the class cluster that was assigned
 to you, also, elaborate on how you managed to understand this roleand provide the necessary evidence, e.g., javadoc, diagrams, etc.>
@@ -10,43 +11,93 @@ Explain which point is not fulfilled and why.>
 
 5.1 Naming Conventions
 1. All class names, interface names, method names, class variables, method variables, and constants used should have meaningful names and do what the name suggests.
+In the setAcroFieldsFormSurveyResponse method, line 546-548 :
+The variable name "ctx" may not be clear enough to explain what it represents (the valid context needed to set the acrobat fields for the pdf and then run it).
+
 2. If one-character variables are used, they are used only for temporary\throwaway" variables, such as those used in for loops.
-3. Class names are nouns, in mixed case, with the first letter of each word in capitalized. Examples: class Raster; class ImageSprite;
+In the buildSurveyResponseFromPdf, getAcroFieldsFromPdf and setAcroFields methods, respectively line 251, 302 and 338 : 
+The variable name "s", representing the PdfSTamper has to be more explicit. Indeed, even if it is in a block with temporary variables needed by a for loop, it is used at least three times outside the loop. 
+
+3. Class names are nouns, in mixed case, with the first letter of each word in capitalized. 
+OK
+
 4. Interface names should be capitalized like classes.
-5. Method names should be verbs, with the first letter of each addition word capitalized. Examples: getBackground(); computeTemperature().
+NO INTERFACE
+
+5. Method names should be verbs, with the first letter of each addition word capitalized. 
+OK
+
 6. Class variables, also called attributes, are mixed case, but might begin with an underscore (` ') followed by a lowercase first letter. All the remaining words in the variable name have their first letter capitalized.
-Examples: windowHeight, timeSeriesData.
-7. Constants are declared using all uppercase with words separated by an underscore. Examples: MIN WIDTH; MAX HEIGHT.
+OK
+
+7. Constants are declared using all uppercase with words separated by an underscore.
+Two constants are used in the code and are not declared in uppercase : 
+Line 73 : public static final String module = PdfSurveyServices.class.getName();
+It should be MODULE.
+Line 74 : public static final String resource = "ContentUiLabels";
+It should be RESOURCE.
 
 5.2 Indention
 8. Three or four spaces are used for indentation and done so consistently.
+Four spaces are used for each identation except for the catch exceptions, the identation in these code blocks are of two spaces.
+
 9. No tabs are used to indent.
+OK
 
 5.3 Braces
 10. Consistent bracing style is used, either the preferred \Allman" style (first brace goes underneath the opening block) or the \Kernighan and Ritchie" style (first brace is on the same line of the instruction that opens the new block).
+The style of bracing is consistent, using the "Kernighan and Ritchie" one.
 11. All if, while, do-while, try-catch, and for statements that have only one statement to execute are surrounded by curly braces. 
-Example:
-Avoid this:
-if ( condition )
-doThis();
-Instead do this:
-if ( condition )
-{
-doThis();
-}
+All the if, for and try-catch statements are surrounded by curly braces.
+There is only one while statement and it is not surrounded by curly braces but written on the same line :
+Line 585 : while ((c = fis.read()) != -1) baos.write(c);
+There is no do-while statement in the code. 
 
 5.4 File Organization
 12. Blank lines and optional comments are used to separate sections (beginning comments, package/import statements, class/interface declarations which include class variable/attributes declarations, constructors, and methods).
+The blank lines are moreover used to separate the end of statements from new variable declarations or attributions (after the if, else, for, try-catch) (for instance lines 195-197 or 309-310).
+Finally they are also used to manage blocks of similar code such as variable declarations or loops (for example lines 142-147 or 118-121).
+
 13. Where practical, line length does not exceed 80 characters.
+OK
 14. When line length must exceed 80 characters, it does NOT exceed 120 characters.
+When exceed 80 characters it is to declare a method, so it is better to be written on the same line (example line 79 for the buildSurveyFromPdf method).
+But it also occurs in some other parts of the code :
+Because of the Map, needed to create the "SurveyQuestionCategory", "buildSurveyResponseFromPdf", "buildPdfFromSurveyResponse" and "buildSurveyQuestionsAndAnswers" on lines 108-109, 227, 390 and 460
+with the line lengths of 246, 124, 125 and 127 characters.
+Because of the logWarning that has to be register for the debug lines 132, 148, 156, the line length are respectively of 161, 156, 189 characters.
+Because the generic values "surveyQuestionAppl", "surveyResponse", "surveyResponseAnswer" and "surveyQuestion" of lines 191, 236, 242, 401, 269, 423, 467, 470, 495, 513 with the line lengths from 135 to 172 characters.
+Because of the list of generic values "responses" lines 419, 467 and 508 with 143 characters.
+Because of the return errors that exceed 150 characters per line several times (lines 210, 213, 216, 279, 282, 285).
+  
 5.5 Wrapping Lines
+There are two expressions that are break on several lines in the code :   
+Lines 258-261 : The generic value "surveyQuestionAndAppl" is defined on 4 lines. 
+Lines 515-519 : The generic value "surveyQuestionAppl" is defined on 5 lines.
+Both of them have lines breaking that occurs after comma and parenthesis (high-level break) and are well aligned according to the level of the previous line expression.
+
 15. Line break occurs after a comma or an operator.
+OK
 16. Higher-level breaks are used.
+OK
 17. A new statement is aligned with the beginning of the expression at the same level as the previous line.
+OK
 
 5.6 Comments
 18. Comments are used to adequately explain what the class, interface, methods, and blocks of code are doing.
+There is not enough comments to describe the methods or the class. All of the ones before the methods are empty and the one before the class only give its name.
+The useful comments are dispatched in the code, before some parts that need to be explicited. 
+The comments are also used for the TODO, the functionalities that have to be added or changed in the future :
+Line 129 : //TODO: handle these specially with the acroFields.getListOptionDisplay (and getListOptionExport?)
+Line 159 : // TODO: need to find something better to put into these fields...
+
+And for advise for the future :
+Line 425 : 
+// DEJ20060227 this isn't used, if needed in the future should get from SurveyQuestionAppl.externalFieldRef String fieldName = surveyQuestion.getString("description");
+
 19. Commented out code contains a reason for being commented out and a date it can be removed from the source file if determined it is no longer needed.
+The only commented out code line in the script is not commented or dated :
+Line 256 : //AcroFields.Item item = fs.getFieldItem(fieldName);
 
 5.7 Java Source Files
 20. Each Java source file contains a single public class or interface.
