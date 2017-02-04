@@ -148,40 +148,62 @@ iv. last private instance variables.
 
 5.13 Object Comparison
 40. Check that all objects (including Strings) are compared with equals and not with ==.
+OK
 
 5.14 Output Format
 41. Check that displayed output is free of spelling and grammatical errors.
+OK
 42. Check that error messages are comprehensive and provide guidance as to how to correct the problem.
+The errors are throwing exceptions or are logged in an adequate way, forwarding the corresponding exception but rarely adding information on the origin of the error.
 43. Check that the output is formatted correctly in terms of line stepping and spacing.
-
+OK
 
 5.15 Computation, Comparisons and Assignments
-44. Check that the implementation avoids \brutish programming": (see http://users.csc.calpoly.edu/~jdalbey/SWE/CodeSmells/bonehead.html).
+44. Check that the implementation avoids "brutish programming".
+OK
 45. Check order of computation/evaluation, operator precedence and parenthesizing.
+OK
 46. Check the liberal use of parenthesis is used to avoid operator precedence problems.
+OK
 47. Check that all denominators of a division are prevented from being zero.
+OK
 48. Check that integer arithmetic, especially division, are used appropriately to avoid causing unexpected truncation/rounding.
+Line 155: The three floats "fieldPage", "fieldLly" and "fieldLlx" are casted into longs, potentially causing unexpected roundings.
 49. Check that the comparison and Boolean operators are correct.
+OK
 50. Check throw-catch expressions, and check that the error condition is actually legitimate.
+OK
 51. Check that the code is free of any implicit type conversions.
+OK
 
 5.16 Exceptions
 52. Check that the relevant exceptions are caught.
+OK
 53. Check that the appropriate action are taken for each catch block.
+All the exceptions are handled in the same way when catched in separate catch blocks, no specific action is taken for any exception.
 
 
 5.17 Flow of Control
 54. In a switch statement, check that all cases are addressed by break or return.
+No switch statements.
 55. Check that all switch statements have a default branch.
+No switch statements.
 56. Check that all loops are correctly formed, with the appropriate initialization, increment and termination expressions.
+OK
 
 
 5.18 Files
 57. Check that all files are properly declared and opened.
+OK
 58. Check that all files are closed properly, even in the case of an error.
+Line 91: The PdfStamper instance "pdfStamper" is closed line 202 but not in case of errors.
+Line 251: The PdfStamper instance "s" is closed line 276 but not in case of errors.
+Line 302: The PdfStamper instance "s" is never closed.
+Line 338: The PdfStamper instance "s" is closed line 364 but not in case of errors.
 59. Check that EOF conditions are detected and handled correctly.
+OK
 60. Check that all file exceptions are caught and dealt with accordingly.
-
+OK
 
 
 6. Any other problem you have highlighted: <list here all the parts of code that you think create or may create a bug and explain why.>
