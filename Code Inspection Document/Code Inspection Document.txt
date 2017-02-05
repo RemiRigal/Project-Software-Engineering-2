@@ -11,11 +11,11 @@ Explain which point is not fulfilled and why.>
 
 5.1 Naming Conventions
 1. All class names, interface names, method names, class variables, method variables, and constants used should have meaningful names and do what the name suggests.
-In the setAcroFieldsFormSurveyResponse method, line 546-548 :
+In the setAcroFieldsFormSurveyResponse method, line 546-548:
 The variable name "ctx" may not be clear enough to explain what it represents (the valid context needed to set the acrobat fields for the pdf and then run it).
 
 2. If one-character variables are used, they are used only for temporary\throwaway" variables, such as those used in for loops.
-In the buildSurveyResponseFromPdf, getAcroFieldsFromPdf and setAcroFields methods, respectively line 251, 302 and 338 : 
+In the buildSurveyResponseFromPdf, getAcroFieldsFromPdf and setAcroFields methods, respectively line 251, 302 and 338: 
 The variable name "s", representing the PdfSTamper has to be more explicit. Indeed, even if it is in a block with temporary variables needed by a for loop, it is used at least three times outside the loop. 
 
 3. Class names are nouns, in mixed case, with the first letter of each word in capitalized. 
@@ -31,10 +31,10 @@ OK
 OK
 
 7. Constants are declared using all uppercase with words separated by an underscore.
-Two constants are used in the code and are not declared in uppercase : 
-Line 73 : public static final String module = PdfSurveyServices.class.getName();
+Two constants are used in the code and are not declared in uppercase: 
+Line 73: public static final String module = PdfSurveyServices.class.getName();
 It should be MODULE.
-Line 74 : public static final String resource = "ContentUiLabels";
+Line 74: public static final String resource = "ContentUiLabels";
 It should be RESOURCE.
 
 5.2 Indention
@@ -49,8 +49,8 @@ OK
 The style of bracing is consistent, using the "Kernighan and Ritchie" one.
 11. All if, while, do-while, try-catch, and for statements that have only one statement to execute are surrounded by curly braces. 
 All the if, for and try-catch statements are surrounded by curly braces.
-There is only one while statement and it is not surrounded by curly braces but written on the same line :
-Line 585 : while ((c = fis.read()) != -1) baos.write(c);
+There is only one while statement and it is not surrounded by curly braces but written on the same line:
+Line 585: while ((c = fis.read()) != -1) baos.write(c);
 There is no do-while statement in the code. 
 
 5.4 File Organization
@@ -62,7 +62,7 @@ Finally they are also used to manage blocks of similar code such as variable dec
 OK
 14. When line length must exceed 80 characters, it does NOT exceed 120 characters.
 When exceed 80 characters it is to declare a method, so it is better to be written on the same line (example line 79 for the buildSurveyFromPdf method).
-But it also occurs in some other parts of the code :
+But it also occurs in some other parts of the code:
 Because of the Map, needed to create the "SurveyQuestionCategory", "buildSurveyResponseFromPdf", "buildPdfFromSurveyResponse" and "buildSurveyQuestionsAndAnswers" on lines 108-109, 227, 390 and 460
 with the line lengths of 246, 124, 125 and 127 characters.
 Because of the logWarning that has to be register for the debug lines 132, 148, 156, the line length are respectively of 161, 156, 189 characters.
@@ -71,9 +71,9 @@ Because of the list of generic values "responses" lines 419, 467 and 508 with 14
 Because of the return errors that exceed 150 characters per line several times (lines 210, 213, 216, 279, 282, 285).
   
 5.5 Wrapping Lines
-There are two expressions that are break on several lines in the code :   
-Lines 258-261 : The generic value "surveyQuestionAndAppl" is defined on 4 lines. 
-Lines 515-519 : The generic value "surveyQuestionAppl" is defined on 5 lines.
+There are two expressions that are break on several lines in the code:   
+Lines 258-261: The generic value "surveyQuestionAndAppl" is defined on 4 lines. 
+Lines 515-519: The generic value "surveyQuestionAppl" is defined on 5 lines.
 Both of them have lines breaking that occurs after comma and parenthesis (high-level break) and are well aligned according to the level of the previous line expression.
 
 15. Line break occurs after a comma or an operator.
@@ -87,17 +87,17 @@ OK
 18. Comments are used to adequately explain what the class, interface, methods, and blocks of code are doing.
 There is not enough comments to describe the methods or the class. All of the ones before the methods are empty and the one before the class only give its name.
 The useful comments are dispatched in the code, before some parts that need to be explicited. 
-The comments are also used for the TODO, the functionalities that have to be added or changed in the future :
-Line 129 : //TODO: handle these specially with the acroFields.getListOptionDisplay (and getListOptionExport?)
-Line 159 : // TODO: need to find something better to put into these fields...
+The comments are also used for the TODO, the functionalities that have to be added or changed in the future:
+Line 129: //TODO: handle these specially with the acroFields.getListOptionDisplay (and getListOptionExport?)
+Line 159: // TODO: need to find something better to put into these fields...
 
-And for advise for the future :
-Line 425 : 
+And for advise for the future:
+Line 425: 
 // DEJ20060227 this isn't used, if needed in the future should get from SurveyQuestionAppl.externalFieldRef String fieldName = surveyQuestion.getString("description");
 
 19. Commented out code contains a reason for being commented out and a date it can be removed from the source file if determined it is no longer needed.
-The only commented out code line in the script is not commented or dated :
-Line 256 : //AcroFields.Item item = fs.getFieldItem(fieldName);
+The only commented out code line in the script is not commented or dated:
+Line 256: //AcroFields.Item item = fs.getFieldItem(fieldName);
 
 5.7 Java Source Files
 20. Each Java source file contains a single public class or interface.
